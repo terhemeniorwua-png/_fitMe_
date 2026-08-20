@@ -7,12 +7,15 @@ import Hero from './components/Home/Hero'
 import NearByRestaurants from './components/Home/Nearby -restaurants'
 import SearchByRest from './components/Home/SearchByRes'
 import OnYourMind from './components/Home/Taste'
+import SearchResults from './components/FunctionalResults/SearchResult'
 
 function App() {
   
   
       let [error, setError] = useState(null)
       let [products, setProducts] = useState('')
+
+      let [search, setSearch] = useState(false)
   
   
       const FetchApi = async ()=>{
@@ -40,15 +43,24 @@ function App() {
     <>
      <Router>
 
-         <Header products={products} setProducts={setProducts}/>
+         <Header products={products} setProducts={setProducts} setSearch={setSearch}/>
     
         <Switch>
-          <Route>
-                <Hero />
+         {
+          !search? (
+             <Route>
+                <Hero products={products} setProducts={setProducts} setSearch={setSearch}/>
                 <NearByRestaurants error={error} products={products}/>
-                <SearchByRest />
+                <SearchByRest products={products} setProducts={setProducts} setSearch={setSearch}/>
                 <OnYourMind product={products}/>
-          </Route>
+              </Route>
+          ): (
+
+            <Route>
+              <SearchResults products={products}/>
+            </Route>
+          )
+         }
 
 
 

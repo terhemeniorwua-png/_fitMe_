@@ -3,8 +3,30 @@ import icon from '/Frame26.png'
 
 
 
-const SearchByRest = () => {
+const SearchByRest = ({products, setProducts, setSearch}) => {
     const [input, setInput] = useState('')
+  
+
+        const handelSearch = (e) =>{
+        if(e.target){
+        // console.log(inputValue)
+        let itemsMatched= products.recipes.filter(item =>{
+            let itemName = item.name.toLowerCase()
+            let input = input.toLowerCase()
+            if(itemName.includes(input)){
+                 return item
+            } else{
+                return 'No match found'
+            }
+// console.log(itemsMatched)
+            
+        }
+    )
+    setProducts(itemsMatched)
+            setSearch(true)
+            setInput('')
+    }
+}
 
     return ( 
         <>
@@ -27,7 +49,9 @@ const SearchByRest = () => {
                           />
                     </div>
 
-                    <button className='bg-black text-white text-sm px-5 py-1 rounded max-md:hidden'>Search Now</button>
+                    <button className='bg-black text-white text-sm px-5 py-1 rounded max-md:hidden'
+                    onClick={(e)=>{handelSearch(e)}}
+                    >Search Now</button>
 
                 </div>
             </div>

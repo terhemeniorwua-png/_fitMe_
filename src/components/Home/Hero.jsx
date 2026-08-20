@@ -5,9 +5,31 @@ import food2 from '/src/assets/Food2.png'
 import bg from '/bg-graphics.png'
 import { useState } from 'react'
 
-const Hero = () => {
+const Hero = ({products, setProducts, setSearch}) => {
 
-    const [inputValue, setInputValue] = useState('')
+    let [inputValue, setInputValue] = useState('')
+
+        const handelSearch = (e) =>{
+        if(e.target){
+        // console.log(inputValue)
+        let itemsMatched= products.recipes.filter(item =>{
+            let itemName = item.name.toLowerCase()
+            let input = inputValue.toLowerCase()
+            if(itemName.includes(input)){
+                 return item
+            } else{
+                 return 'No match found'
+            }
+// console.log(itemsMatched)
+            
+        }
+    )
+    setProducts(itemsMatched)
+            setSearch(true)
+            setInputValue('')
+    }
+
+}
     return ( 
         <>
 
@@ -36,7 +58,9 @@ const Hero = () => {
                                      />
             
                                 </div>
-                                <button className='bg-black text-white text-sm px-5 py-2 max-md:mt-3 rounded'>Get Started</button>
+                                <button className='bg-black text-white text-sm px-5 py-2 max-md:mt-3 rounded'
+                                onClick={(e)=>{handelSearch(e)}}
+                                >Get Started</button>
                             
                              </div>
 

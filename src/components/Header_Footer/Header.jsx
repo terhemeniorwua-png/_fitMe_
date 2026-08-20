@@ -2,27 +2,29 @@ import { BiLock, BiSearch } from 'react-icons/bi';
 import logo from '/Logo.png'
 import { useState } from 'react';
 
-const Header = ({products, setProducts}) => {
+const Header = ({products, setProducts, setSearch}) => {
 
     const [inputValue, setInputValue] = useState('')
 
 
     const handelSearch = (e) =>{
         if(e.target){
-        // console.log(inputValue)
-        let itemsMatched= products.recipes.filter(item =>{
+         
+        let itemsMatched= products? products.recipes.filter(item =>{
             let itemName = item.name.toLowerCase()
             let input = inputValue.toLowerCase()
             if(itemName.includes(input)){
                  return item
             } else{
-                 'No match found'
+                 return 'No match found'
             }
-console.log(itemsMatched)
-            // setProducts(itemsMatched)
-            // setInputValue('')
+// console.log(itemsMatched)
+           
         }
-    )
+    ): alert('Fetch failed!')
+     setProducts(itemsMatched)
+            setSearch(true)
+            setInputValue('')
     }
     }
     return ( 
