@@ -5,6 +5,7 @@ import Footer from './components/Header_Footer/Footer'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Hero from './components/Home/Hero'
 import NearByRestaurants from './components/Home/Nearby -restaurants'
+import SearchByRest from './components/Home/SearchByRes'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
           <Route>
                 <Hero />
                 <NearByRestaurants URL='https://dummyjson.com/recipes'/>
+                <SearchByRest />
           </Route>
 
 

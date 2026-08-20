@@ -1,0 +1,38 @@
+import { useState } from 'react';
+import icon from '/Frame26.png'
+
+
+
+const SearchByRest = () => {
+    const [input, setInput] = useState('')
+
+    return ( 
+        <>
+            <div className="bg-[#FC8019] py-10 mb-20 text-white flex items-center justify-center gap-5">
+                <p className='flex items-center'>
+                    <b>Search by Restaurant </b>
+                        <img src={icon} alt="icon"  className='ml-5'/>
+                </p>
+                <div className='flex items-center gap-5'>
+                    
+                    <div className='border rounded py-1 px-5'>
+                        <input 
+                        type="search"
+                         name=""
+                          id=""
+                          placeholder='Enter item or restaurant you are looking for'
+                          value={input}
+                          onChange={(e)=>{setInput(e.target.value)}}
+
+                          />
+                    </div>
+
+                    <button className='bg-black text-white text-sm px-5 py-1 rounded'>Search Now</button>
+
+                </div>
+            </div>
+        </>
+     );
+}
+ 
+export default SearchByRest;

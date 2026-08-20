@@ -3,7 +3,6 @@ import apple from '/Apple.png'
 import food1 from '/src/assets/Food1.png'
 import food2 from '/src/assets/Food2.png'
 import bg from '/bg-graphics.png'
-import { BiSearch } from 'react-icons/bi'
 import { useState } from 'react'
 
 const Hero = () => {
@@ -13,22 +12,22 @@ const Hero = () => {
         <>
 
 
-                <div className='grid grid-cols-2 py-20 pl-20'>
-
+                <div className='max-md:text-center grid md:grid-cols-2 py-20 md:pl-20'>
+{/* Hero */}
                     <div>
 
-                    <h1 className='text-4xl font-semibold'>
+                    <h1 className='text-6xl max-md:w-[90%] max-md:leading-20 md:text-4xl font-semibold'>
                         <img src={bg} alt="" className='absolute top-36 left-0'/>
 
-                        Premium <span className="text-[#FC8019]">quality</span> <span className='block'>Food for your <img src={banana} alt="banana" className="inline"/> <span className="text-[#FC8019]"> healthy</span> <img src={apple} alt="Apple" className="inline"/> & Daily Life</span>
+                        Premium <span className="text-[#FC8019]">quality</span> <span className='md:block'>Food for your <img src={banana} alt="banana" className="inline"/> <span className="text-[#FC8019]"> healthy</span> <img src={apple} alt="Apple" className="inline"/> & Daily Life</span>
                         </h1>
 
-                        <p className='pr-20'>
+                        <p className='md:pr-20 max-md:text-xl max-md:pt-10 max-md:px-10'>
                             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus itaque qui veritatis sunt provident culpa, inventore fuga maxime quae nisi pariatur, dicta beatae repellat magni saepe id nobis doloribus eaque?</small>
                         </p>
-
+{/* Input search */}
                              <div className='flex items-center gap-5 mt-5 pr-20'>
-                                <div className='border rounded p-2 px-2 flex items-center w-[72%]'>
+                                <div className='border rounded p-2 px-2 flex items-center md:w-[72%]'>
                                     <input
                                      type="search" 
                                      placeholder='Enter item or restaurant you are looking for' className='border-0 outline-0 text-[12px] w-[95%]'
@@ -40,6 +39,8 @@ const Hero = () => {
                                 <button className='bg-black text-white text-sm px-5 py-2 rounded'>Get Started</button>
                             
                              </div>
+
+        {/* popular cities */}
                              <p className='py-5'>
                                 <small>Popular cities in India</small>
                              </p>
@@ -56,9 +57,9 @@ const Hero = () => {
 
 
 {/* Images */}
-                    <div className='flex items-center gap-10'>
-                        <img src={food1} alt="Food" className='h-110'/>
-                        <img src={food2} alt="Food" className='h-96'/>
+                    <div className='flex max-md:mt-20 max-md:flex-col items-center md:gap-10'>
+                        <img src={food1} alt="Food" className='max-md:w-[80%] h-110 m-auto'/>
+                        <img src={food2} alt="Food" className='max-md:hidden h-96'/>
                     </div>
 
                 </div>
