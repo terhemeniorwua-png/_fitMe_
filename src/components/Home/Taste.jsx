@@ -1,8 +1,9 @@
 import { BiStar } from "react-icons/bi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import group from '/Group.png'
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-const OnYourMind = ({product}) => {
+const OnYourMind = ({product, handleDetails}) => {
     // console.log(product)
     return ( 
         <>
@@ -12,7 +13,7 @@ const OnYourMind = ({product}) => {
             <div className="max-md:grid max-md:grid-cols-3 gap-5 md:flex items-center md:gap-10 justify-between">
                 {
                     product && product.recipes.slice(5, 11).map(pdt =>(
-                        <div className="space-y-5 text-center" key={pdt.id}>
+                        <div className="space-y-5 text-center" key={pdt.id} onClick={()=>{handleDetails(pdt.id)}}>
                             <img src={pdt.image} alt="product" className="rounded-full img-hovered"/>
                             <p>{pdt.name}</p>
                         </div>
@@ -25,10 +26,11 @@ const OnYourMind = ({product}) => {
            <div className="md:px-20 my-20">
              <h4 className="font-bold pb-5 max-md:text-center ">Personalized Recommendation</h4>
 
-            <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-10">
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-10 md:mb-10">
                 {
                                     product && product.recipes.slice(12, 16).map(pdt =>(
-                                        <div key={pdt.id} className="bg-gray-100 px-5 py-2">
+                                        
+                                        <div key={pdt.id} className="bg-gray-100 px-5 py-2" onClick={()=>{handleDetails(pdt.id)}}>
                                             <div className="img-hovered">
                                                 <img src={pdt.image} alt="" className="w-full rounded-xl"/>
                                             </div>
@@ -44,6 +46,7 @@ const OnYourMind = ({product}) => {
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                     ))
                                 }
             </div>

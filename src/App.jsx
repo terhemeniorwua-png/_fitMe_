@@ -8,12 +8,14 @@ import NearByRestaurants from './components/Home/Nearby -restaurants'
 import SearchByRest from './components/Home/SearchByRes'
 import OnYourMind from './components/Home/Taste'
 import SearchResults from './components/FunctionalResults/SearchResult'
+import ProductDetails from './components/FunctionalResults/productDetails'
 
 function App() {
   
   
       let [error, setError] = useState(null)
       let [products, setProducts] = useState('')
+      
 
       let [search, setSearch] = useState(false)
   
@@ -37,6 +39,14 @@ function App() {
           FetchApi()
       }, [])
 
+      // console.log(products)
+
+
+      const handleDetails = (id) =>{
+        // console.log(id)
+        let productClicked = products.recipes.find(product => product.id === id)
+        setProducts(productClicked)
+      }
 
 
   return (
@@ -50,9 +60,9 @@ function App() {
           !search? (
              <Route>
                 <Hero products={products} setProducts={setProducts} setSearch={setSearch}/>
-                <NearByRestaurants error={error} products={products}/>
+                <NearByRestaurants error={error} products={products} func={handleDetails}/>
                 <SearchByRest products={products} setProducts={setProducts} setSearch={setSearch}/>
-                <OnYourMind product={products}/>
+                <OnYourMind product={products} handleDetails={handleDetails}/>
               </Route>
           ): (
 
@@ -62,7 +72,9 @@ function App() {
           )
          }
 
-
+         <Route>
+            <ProductDetails product={products}/>
+         </Route>
 
         </Switch>
 
