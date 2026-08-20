@@ -1,33 +1,11 @@
-import { useEffect, useState } from "react";
+
 import { BiStar } from "react-icons/bi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import group from '/Group.png'
 
 
-const NearByRestaurants = ({URL}) => {
+const NearByRestaurants = ({error, products}) => {
 
-    let [error, setError] = useState(null)
-    let [products, setProducts] = useState('')
-
-
-    const FetchApi = async ()=>{
-        try{
-
-            let response = await fetch(URL);
-            // console.log(response)
-            !response.ok && (new Error('Failed to fetch'))
-            let data = await response.json()
-            console.log(data)
-            setProducts(data)
-
-        } catch(err){
-            setError(err.message)
-        }
-    }
-
-    useEffect(()=>{
-        FetchApi()
-    }, [])
 
     return ( 
         <>
