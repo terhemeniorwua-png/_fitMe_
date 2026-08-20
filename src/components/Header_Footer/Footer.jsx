@@ -1,6 +1,7 @@
 import { BiLogoFacebook, BiLogoInstagram, BiLogoTwitter } from 'react-icons/bi';
 import logo from '/Footer-Logo.png'
 import { FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Footer = () => {
     return ( 
@@ -21,9 +22,10 @@ const Footer = () => {
                 </div>
 
                 <p className='text-2xl flex justify-center items-center gap-5'>
-                    <BiLogoFacebook />
-                    <BiLogoInstagram />
-                    <FaTwitter />
+                    <a href="https://web.facebook.com/philip.iorwua.9"><BiLogoFacebook /></a>
+                     <a href="https://www.instagram.com/?hl=en"><BiLogoInstagram /></a>
+                   <a href='https://x.com/PIorwua12080'><FaTwitter /></a>
+                    
                 </p>
             </footer>
         </>
