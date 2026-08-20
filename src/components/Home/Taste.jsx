@@ -13,7 +13,7 @@ const OnYourMind = ({product}) => {
                 {
                     product && product.recipes.slice(5, 11).map(pdt =>(
                         <div className="space-y-5 text-center" key={pdt.id}>
-                            <img src={pdt.image} alt="product" className="rounded-full"/>
+                            <img src={pdt.image} alt="product" className="rounded-full img-hovered"/>
                             <p>{pdt.name}</p>
                         </div>
                     ))
@@ -29,7 +29,7 @@ const OnYourMind = ({product}) => {
                 {
                                     product && product.recipes.slice(12, 16).map(pdt =>(
                                         <div key={pdt.id} className="bg-gray-100 px-5 py-2">
-                                            <div>
+                                            <div className="img-hovered">
                                                 <img src={pdt.image} alt="" className="w-full rounded-xl"/>
                                             </div>
                                             <div>

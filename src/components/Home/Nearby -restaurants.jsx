@@ -18,7 +18,7 @@ const NearByRestaurants = ({error, products}) => {
                         <div className="grid grid-cols-2 space-y-10 gap-10">
                 {
                     products && products.recipes.slice(0, 12).map(product =>(
-                        <div key={product.id} className="bg-gray-100 px-5 py-2">
+                        <div key={product.id} className="bg-gray-100 px-5 py-2 img-hovered">
                             <div>
                                 <img src={product.image} alt="" className="w-full rounded-xl"/>
                             </div>
@@ -45,7 +45,7 @@ const NearByRestaurants = ({error, products}) => {
                 <div className="grid grid-cols-2 md:grid-cols-3 space-y-10 gap-10">
                 {
                     products && products.recipes.slice(12, 30).map(product =>(
-                        <div key={product.id} className="bg-gray-100 px-5 py-2">
+                        <div key={product.id} className="bg-gray-100 px-5 py-2 img-hovered">
                             <div>
                                 <img src={product.image} alt="" className="w-full rounded-xl"/>
                             </div>

@@ -34,11 +34,13 @@ function App() {
           FetchApi()
       }, [])
 
+
+
   return (
     <>
      <Router>
 
-         <Header />
+         <Header products={products} setProducts={setProducts}/>
     
         <Switch>
           <Route>

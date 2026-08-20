@@ -45,21 +45,21 @@ const Hero = () => {
                                 <small>Popular cities in India</small>
                              </p>
 
-                             {/* <ul className='flex items-center justify-between pr-36 text-sm'>
+                             <ul className='flex items-center justify-between max-md:px-5 text-[10px] md:pr-36  md:text-sm'>
                                 <li>Hyderabad</li>
                                 <li className='text-[#FC8019]'>Chemical</li>
                                 <li>Mumbai</li>
                                 <li className='text-[#FC8019]'>Langalara</li>
                                 <li>Delhi</li>
                                 <li className='text-[#FC8019]'>Kalkata</li>
-                             </ul> */}
+                             </ul>
                     </div>
 
 
 {/* Images */}
                     <div className='flex max-md:mt-20 max-md:flex-col items-center md:gap-10'>
-                        <img src={food1} alt="Food" className='max-md:w-[80%] h-110 m-auto'/>
-                        <img src={food2} alt="Food" className='max-md:hidden h-96'/>
+                       <div className='overflow-hidden'> <img src={food1} alt="Food" className='max-md:w-[80%] h-110 m-auto img-hovered'/></div>
+                        <div className='overflow-hidden'><img src={food2} alt="Food" className='max-md:hidden h-96 img-hovered'/></div>
                     </div>
 
                 </div>
