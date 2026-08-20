@@ -3,28 +3,30 @@ import logo from '/Logo.png'
 import { useState } from 'react';
 
 const Header = ({products, setProducts, setSearch}) => {
+    // console.log(products)
 
     const [inputValue, setInputValue] = useState('')
 
 
     const handelSearch = (e) =>{
+        // console.log('Clicked')
         if(e.target){
          
-        let itemsMatched= products? products.recipes.filter(item =>{
+       let itemsMatched= products && products.recipes.filter(item =>{
             let itemName = item.name.toLowerCase()
             let input = inputValue.toLowerCase()
-            if(itemName.includes(input)){
-                 return item
-            } else{
-                 return 'No match found'
-            }
-// console.log(itemsMatched)
+
+            return itemName.includes(input) 
            
-        }
-    ): alert('Fetch failed!')
-     setProducts(itemsMatched)
-            setSearch(true)
-            setInputValue('')
+        })
+
+        setProducts({reipes: itemsMatched})
+        setSearch(true)
+        setInputValue('')
+
+
+    //  alert('Fetch failed!')
+   
     }
     }
     return ( 

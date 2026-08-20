@@ -7,29 +7,30 @@ import { useState } from 'react'
 
 const Hero = ({products, setProducts, setSearch}) => {
 
-    let [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('')
 
-        const handelSearch = (e) =>{
+
+    const handelSearch = (e) =>{
+        // console.log('Clicked')
         if(e.target){
-        // console.log(inputValue)
-        let itemsMatched= products.recipes.filter(item =>{
+         
+       let itemsMatched= products && products.recipes.filter(item =>{
             let itemName = item.name.toLowerCase()
             let input = inputValue.toLowerCase()
-            if(itemName.includes(input)){
-                 return item
-            } else{
-                 return 'No match found'
-            }
-// console.log(itemsMatched)
-            
-        }
-    )
-    setProducts(itemsMatched)
-            setSearch(true)
-            setInputValue('')
-    }
 
-}
+            return itemName.includes(input) 
+           
+        })
+
+        setProducts({reipes: itemsMatched})
+        setSearch(true)
+        setInputValue('')
+
+
+    //  alert('Fetch failed!')
+   
+    }
+    }
     return ( 
         <>
 
