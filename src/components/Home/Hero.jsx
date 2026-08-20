@@ -16,17 +16,17 @@ const Hero = () => {
 {/* Hero */}
                     <div>
 
-                    <h1 className='text-6xl max-md:w-[90%] max-md:leading-20 md:text-4xl font-semibold'>
+                    <h1 className='text-5xl max-md:w-[90%] max-md:m-auto max-md:leading-16 md:text-4xl font-semibold'>
                         <img src={bg} alt="" className='absolute top-36 left-0'/>
 
                         Premium <span className="text-[#FC8019]">quality</span> <span className='md:block'>Food for your <img src={banana} alt="banana" className="inline"/> <span className="text-[#FC8019]"> healthy</span> <img src={apple} alt="Apple" className="inline"/> & Daily Life</span>
                         </h1>
 
-                        <p className='md:pr-20 max-md:text-xl max-md:pt-10 max-md:px-10'>
+                        <p className='md:pr-20 max-md:text-xl max-md:pt-10 max-md:px-5'>
                             <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus itaque qui veritatis sunt provident culpa, inventore fuga maxime quae nisi pariatur, dicta beatae repellat magni saepe id nobis doloribus eaque?</small>
                         </p>
 {/* Input search */}
-                             <div className='flex items-center gap-5 mt-5 pr-20'>
+                             <div className='md:flex items-center gap-5 mt-5 md:pr-20 max-md:mx-5'>
                                 <div className='border rounded p-2 px-2 flex items-center md:w-[72%]'>
                                     <input
                                      type="search" 
@@ -36,7 +36,7 @@ const Hero = () => {
                                      />
             
                                 </div>
-                                <button className='bg-black text-white text-sm px-5 py-2 rounded'>Get Started</button>
+                                <button className='bg-black text-white text-sm px-5 py-2 max-md:mt-3 rounded'>Get Started</button>
                             
                              </div>
 
@@ -45,14 +45,14 @@ const Hero = () => {
                                 <small>Popular cities in India</small>
                              </p>
 
-                             <ul className='flex items-center justify-between pr-36 text-sm'>
+                             {/* <ul className='flex items-center justify-between pr-36 text-sm'>
                                 <li>Hyderabad</li>
                                 <li className='text-[#FC8019]'>Chemical</li>
                                 <li>Mumbai</li>
                                 <li className='text-[#FC8019]'>Langalara</li>
                                 <li>Delhi</li>
                                 <li className='text-[#FC8019]'>Kalkata</li>
-                             </ul>
+                             </ul> */}
                     </div>
 
 

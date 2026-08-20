@@ -1,17 +1,17 @@
 import { BiLogoFacebook, BiLogoInstagram, BiLogoTwitter } from 'react-icons/bi';
 import logo from '/Footer-Logo.png'
 import { FaTwitter } from 'react-icons/fa';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+// import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Footer = () => {
     return ( 
         <>
-            <footer className="bg-[#FC8019] text-white py-20 space-y-5">
-                <div className='flex items-center justify-around'>
+            <footer className="bg-[#FC8019] text-white py-20 space-y-5 pl-5">
+                <div className='md:flex items-center justify-around'>
                     <img src={logo} alt="logo" />
 
                     <nav>
-                        <ul className='flex items-center gap-5 font-bold'>
+                        <ul className='max-md:pt-10 md:flex max-md:space-y-3 items-center gap-5 font-bold'>
                             <li>About us</li>
                             <li>Delivery</li>
                             <li>Help & Support</li>

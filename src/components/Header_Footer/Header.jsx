@@ -23,7 +23,7 @@ const Header = () => {
         <div>
 
              <div className='relative md:hidden'>
-                <BiSearch className='absolute -right-24 md:hidden rotate-90 text-4xl'/>
+                <BiSearch className='absolute right-5 md:hidden rotate-90 text-4xl'/>
              </div>
 
             <div className='border rounded p-1 px-2 flex items-center w-[90%] hidden'>

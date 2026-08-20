@@ -7,9 +7,9 @@ const OnYourMind = ({product}) => {
     return ( 
         <>
           <div className="md:px-20">
-              <h4 className="font-bold pb-5">What's on your mind</h4>
+              <h4 className="max-md:text-center font-bold pb-5">What's on your mind</h4>
 
-            <div className="flex items-center md:gap-10 justify-between">
+            <div className="max-md:grid max-md:grid-cols-3 gap-5 md:flex items-center md:gap-10 justify-between">
                 {
                     product && product.recipes.slice(5, 11).map(pdt =>(
                         <div className="space-y-5 text-center" key={pdt.id}>
@@ -23,9 +23,9 @@ const OnYourMind = ({product}) => {
 
 
            <div className="md:px-20 my-20">
-             <h4 className="font-bold pb-5">Personalized Recommendation</h4>
+             <h4 className="font-bold pb-5 max-md:text-center ">Personalized Recommendation</h4>
 
-            <div className="grid md:grid-cols-4 md:gap-10">
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-10">
                 {
                                     product && product.recipes.slice(12, 16).map(pdt =>(
                                         <div key={pdt.id} className="bg-gray-100 px-5 py-2">

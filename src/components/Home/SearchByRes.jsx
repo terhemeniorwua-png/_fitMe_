@@ -8,8 +8,8 @@ const SearchByRest = () => {
 
     return ( 
         <>
-            <div className="bg-[#FC8019] py-10 mb-20 text-white flex items-center justify-center gap-5">
-                <p className='flex items-center'>
+            <div className="bg-[#FC8019] py-10 mb-20 text-white flex items-center justify-center md:gap-5">
+                <p className='flex items-center max-md:hidden'>
                     <b>Search by Restaurant </b>
                         <img src={icon} alt="icon"  className='ml-5'/>
                 </p>
@@ -23,11 +23,11 @@ const SearchByRest = () => {
                           placeholder='Enter item or restaurant you are looking for'
                           value={input}
                           onChange={(e)=>{setInput(e.target.value)}}
-
+                            className='border-0 outline-0'
                           />
                     </div>
 
-                    <button className='bg-black text-white text-sm px-5 py-1 rounded'>Search Now</button>
+                    <button className='bg-black text-white text-sm px-5 py-1 rounded max-md:hidden'>Search Now</button>
 
                 </div>
             </div>
