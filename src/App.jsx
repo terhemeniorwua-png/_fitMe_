@@ -22,7 +22,7 @@ function App() {
               // console.log(response)
               !response.ok && (new Error('Failed to fetch'))
               let data = await response.json()
-              console.log(data)
+              // console.log(data)
               setProducts(data)
   
           } catch(err){
@@ -45,7 +45,7 @@ function App() {
                 <Hero />
                 <NearByRestaurants error={error} products={products}/>
                 <SearchByRest />
-                <OnYourMind />
+                <OnYourMind product={products}/>
           </Route>
 
 

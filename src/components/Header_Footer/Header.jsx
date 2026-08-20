@@ -37,13 +37,6 @@ const Header = () => {
                         <BiSearch className='rotate-90 text-xl'/>
                     </div>
 
-       
-
-
-
-
-
-
 
         {/* Desktop */}
                 <div className='flex items-center gap-5 max-md:hidden pl-20'>
