@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header_Footer/Header'
 import Footer from './components/Header_Footer/Footer'
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Hero from './components/Home/Hero'
 import NearByRestaurants from './components/Home/Nearby -restaurants'
 import SearchByRest from './components/Home/SearchByRes'
@@ -12,12 +12,12 @@ import ProductDetails from './components/FunctionalResults/productDetails'
 
 function App() {
   
+  let navigate = useNavigate()
   
       let [error, setError] = useState(null)
       let [products, setProducts] = useState('')
-      
-
       let [search, setSearch] = useState(false)
+      let [selectedProduct, setSelectedProduct] = useState(null)
   
   
       const FetchApi = async ()=>{
@@ -45,43 +45,73 @@ function App() {
       const handleDetails = (id) =>{
         // console.log(id)
         let productClicked = products.recipes.find(product => product.id === id)
-        setProducts(productClicked)
+        setSelectedProduct(productClicked)
+       navigate(`/product/${id}`)
       }
 
 
   return (
     <>
-     <Router>
 
-         <Header products={products} setProducts={setProducts} setSearch={setSearch}/>
-    
-        <Switch>
-         {
-          !search? (
-             <Route>
-                <Hero products={products} setProducts={setProducts} setSearch={setSearch}/>
-                <NearByRestaurants error={error} products={products} func={handleDetails}/>
-                <SearchByRest products={products} setProducts={setProducts} setSearch={setSearch}/>
-                <OnYourMind product={products} handleDetails={handleDetails}/>
-              </Route>
-          ): (
+         <Header
+        products={products}
+        setProducts={setProducts}
+        setSearch={setSearch}
+      />
 
-            <Route>
-              <SearchResults products={products}/>
-            </Route>
-          )
-         }
+      <Routes>
 
-         <Route>
-            <ProductDetails product={products}/>
-         </Route>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero
+                products={products}
+                setProducts={setProducts}
+                setSearch={setSearch}
+              />
 
-        </Switch>
+              <NearByRestaurants
+                error={error}
+                products={products}
+                func={handleDetails}
+              />
 
-        <Footer />
-     </Router>
+              <SearchByRest
+                products={products}
+                setProducts={setProducts}
+                setSearch={setSearch}
+              />
+
+              <OnYourMind
+                product={products}
+                handleDetails={handleDetails}
+              />
+            </>
+          }
+        />
+
+        <Route
+          path="/search"
+          element={
+            <SearchResults products={products} />
+          }
+        />
+
+        <Route
+          path="/product/:id"
+          element={
+            <ProductDetails
+              product={selectedProduct}
+            />
+          }
+        />
+
+      </Routes>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

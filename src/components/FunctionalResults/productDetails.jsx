@@ -1,9 +1,13 @@
 
 const ProductDetails = ({product}) => {
-    console.log(product)
+
+    // console.log(product)
+
+
+
     return ( 
         <>
-
+            <h1>Hiiiii</h1>
         </>
      );
 }

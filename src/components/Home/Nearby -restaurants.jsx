@@ -1,14 +1,10 @@
 
-import { BiStar } from "react-icons/bi";
-import { FaPeopleGroup } from "react-icons/fa6";
-import group from '/Group.png'
+import Food from "./Food";
 
 
 const NearByRestaurants = ({error, products, func}) => {
 
     
-
-
     return ( 
         <>
             <p className="text-center text-red-500 text-2xl font-semibold">{error}</p>
@@ -18,24 +14,20 @@ const NearByRestaurants = ({error, products, func}) => {
                     <div className="border-r border-gray-200">
                         <h1 className="text-center text-2xl font-black pb-5">Nearby restaurants</h1>
                         <div className="grid grid-cols-2 space-y-10 gap-10">
+                            {/* {console.log(products)} */}
                 {
-                    products && products.recipes.slice(0, 12).map(product =>(
-                        <div key={product.id} className="bg-gray-100 px-5 py-2 img-hovered" onClick={()=>{func(product.id)}}>
-                            <div>
-                                <img src={product.image} alt="" className="w-full rounded-xl"/>
-                            </div>
-                            <div>
-                                <h1 className="pt-5">{product.name}</h1>
-                                <div className="flex justify-between">
-                                    <small className="pt-5">{product.cuisine}</small>
-                                    <small className="pt-5 flex items-center gap-1"><BiStar className={product.rating >= 4.8? 'text-green-500' : 'text-amber-500'}/> {product.rating}</small>
-                                </div>
-                                <div className="flex justify-between">
-                                    <small className="pt-5 flex gap-1 items-center"><img src={group} alt="icon" className="w-3"/> {product.cookTimeMinutes} mins</small>
-                                    <small className="pt-5 flex items-center gap-1"><FaPeopleGroup className='text-amber-500'/> {product.caloriesPerServing} for two</small>
-                                </div>
-                            </div>
-                        </div>
+                     products?.recipes?.slice(0, 12).map(product =>(
+                        <Food 
+                            key={product.id}
+                            id={product.id}
+                            name={product.name}
+                            img={product.image}
+                            rating={product.rating}
+                            cuisine={product.cuisine}
+                            cookTimeMinutes={product.cookTimeMinutes}
+                            caloriesPerServing={product.caloriesPerServing}
+                            func={()=>{func(product.id)}}
+                        />
                     ))
                 }
             </div>
@@ -45,26 +37,21 @@ const NearByRestaurants = ({error, products, func}) => {
                 <h1 className="text-center text-2xl font-black pb-5">Recommended Foods</h1>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 space-y-10 gap-10">
-                     {console.log(products, func)}
+                     
                 {
                    
-                    products && products.recipes.slice(12, 30).map(product =>(
-                        <div key={product.id} className="bg-gray-100 px-5 py-2 img-hovered" onClick={()=>{func(product.id)}}>
-                            <div>
-                                <img src={product.image} alt="" className="w-full rounded-xl"/>
-                            </div>
-                            <div>
-                                <h1 className="pt-5">{product.name}</h1>
-                                <div className="flex justify-between">
-                                    <small className="pt-5">{product.cuisine}</small>
-                                    <small className="pt-5 flex items-center gap-1"><BiStar className={product.rating >= 4.8? 'text-green-500' : 'text-amber-500'}/> {product.rating}</small>
-                                </div>
-                                <div className="flex justify-between">
-                                    <small className="pt-5 flex gap-1 items-center"><img src={group} alt="icon" className="w-3"/> {product.cookTimeMinutes} mins</small>
-                                    <small className="pt-5 flex items-center gap-1"><FaPeopleGroup className='text-amber-500'/> {product.caloriesPerServing} for two</small>
-                                </div>
-                            </div>
-                        </div>
+                     products?.recipes?.slice(12, 30).map(product =>(
+                           <Food 
+                            key={product.id}
+                            id={product.id}
+                            name={product.name}
+                            img={product.image}
+                            rating={product.rating}
+                            cuisine={product.cuisine}
+                            cookTimeMinutes={product.cookTimeMinutes}
+                            caloriesPerServing={product.caloriesPerServing}
+                             func={()=>{func(product.id)}}
+                        />
                     ))
                 }
             </div>
