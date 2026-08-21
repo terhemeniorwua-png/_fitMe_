@@ -55,7 +55,7 @@ function App() {
   return (
     <>
         {
-          loggedIn? 
+          !loggedIn? 
           (
             <Routes>
               
