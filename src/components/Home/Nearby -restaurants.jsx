@@ -41,6 +41,7 @@ const NearByRestaurants = ({error, products, func}) => {
                 {
                    
                      products?.recipes?.slice(12, 30).map(product =>(
+                        // console.log(product)
                            <Food 
                             key={product.id}
                             id={product.id}
@@ -56,7 +57,7 @@ const NearByRestaurants = ({error, products, func}) => {
                 }
             </div>
            
-                    </div>
+            </div>
 
             </div>
         </>

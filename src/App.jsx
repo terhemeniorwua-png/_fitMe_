@@ -17,7 +17,7 @@ function App() {
   
       let [loggedIn, setLoggedIn] = useState(false)
       let [error, setError] = useState(null)
-      let [products, setProducts] = useState('')
+      let [products, setProducts] = useState({ recipes: [] })
       let [search, setSearch] = useState(false)
       let [selectedProduct, setSelectedProduct] = useState(null)
   
@@ -77,7 +77,7 @@ function App() {
 
       <Routes>
 
-        <Route
+          <Route
           path="/"
           element={
             <>
@@ -111,8 +111,13 @@ function App() {
           path="/search"
           element={
             <SearchResults products={products} />
+            
           }
+            
         />
+        
+  
+      {/* {console.log(products)} */}
 
         <Route
           path="/product/:id"
@@ -131,6 +136,8 @@ function App() {
       </div>
 
          }
+
+        {/* {console.log(products)} */}
     </>
   );
 }

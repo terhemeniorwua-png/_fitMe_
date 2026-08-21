@@ -4,8 +4,13 @@ import food1 from '/src/assets/Food1.png'
 import food2 from '/src/assets/Food2.png'
 import bg from '/bg-graphics.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+
 
 const Hero = ({products, setProducts, setSearch}) => {
+
+    let navigate = useNavigate()
 
     const [inputValue, setInputValue] = useState('')
 
@@ -18,13 +23,15 @@ const Hero = ({products, setProducts, setSearch}) => {
             let itemName = item.name.toLowerCase()
             let input = inputValue.toLowerCase()
 
-            return itemName.includes(input) 
+            return itemName.includes(input)
+            // console.log(itemName.includes(input)) 
            
         })
-
+// console.log(itemsMatched)
         setProducts({reipes: itemsMatched})
         setSearch(true)
         setInputValue('')
+        navigate('/search')
 
 
     //  alert('Fetch failed!')

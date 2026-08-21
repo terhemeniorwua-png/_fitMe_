@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import icon from '/Frame26.png'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -7,22 +8,28 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
 
     const [input, setInput] = useState('')
 
+    let navigate = useNavigate()
+
+
 
     const handelSearch = (e) =>{
         // console.log('Clicked')
         if(e.target){
-        //  console.log('Clicked')
+         
        let itemsMatched= products && products.recipes.filter(item =>{
             let itemName = item.name.toLowerCase()
-            let inputValue = input.toLowerCase()
+            let input = inputValue.toLowerCase()
 
-            return itemName.includes(inputValue) 
+            return itemName.includes(input)
+            // console.log(itemName.includes(input)) 
            
         })
-
-        setProducts({reipes: itemsMatched})
+// console.log(itemsMatched)
+        setProducts({recipes: itemsMatched})
         setSearch(true)
-        setInput('')
+        setInputValue('')
+        navigate('/search')
+
 
 
     //  alert('Fetch failed!')
@@ -37,7 +44,7 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
                     <b>Search by Restaurant </b>
                         <img src={icon} alt="icon"  className='ml-5'/>
                 </p>
-                <div className='flex items-center gap-5'>
+                <div className='max-md:space-y-5 md:flex items-center gap-5'>
                     
                     <div className='border rounded py-1 px-5'>
                         <input 
@@ -51,7 +58,7 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
                           />
                     </div>
 
-                    <button className='bg-black text-white text-sm px-5 py-1 rounded max-md:hidden'
+                    <button className='bg-black text-white text-sm px-5 py-1 rounded '
                      onClick={(e)=>{handelSearch(e)}}
                     >Search Now</button>
 
