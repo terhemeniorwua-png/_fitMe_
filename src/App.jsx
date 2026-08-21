@@ -9,11 +9,13 @@ import SearchByRest from './components/Home/SearchByRes'
 import OnYourMind from './components/Home/Taste'
 import SearchResults from './components/FunctionalResults/SearchResult'
 import ProductDetails from './components/FunctionalResults/productDetails'
+import SignIn from './components/SignIn/SignIn'
 
 function App() {
   
   let navigate = useNavigate()
   
+      let [loggedIn, setLoggedIn] = useState(false)
       let [error, setError] = useState(null)
       let [products, setProducts] = useState('')
       let [search, setSearch] = useState(false)
@@ -52,7 +54,21 @@ function App() {
 
   return (
     <>
-
+        {
+          loggedIn? 
+          (
+            <Routes>
+              
+            <Route
+            path='/'
+            element={
+                <SignIn setLoggedIn={setLoggedIn}/>
+            }
+          />
+          </Routes>
+        ):
+          
+       <div>
          <Header
         products={products}
         setProducts={setProducts}
@@ -109,7 +125,12 @@ function App() {
 
       </Routes>
 
+
       <Footer />
+
+      </div>
+
+         }
     </>
   );
 }

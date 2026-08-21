@@ -7,7 +7,7 @@ const ProductDetails = ({product}) => {
 
     return ( 
         <>
-            <h1>Hiiiii</h1>
+           
         </>
      );
 }
