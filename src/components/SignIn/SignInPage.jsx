@@ -14,7 +14,7 @@ const SignUpPage = ({setLoggedN}) => {
            
 
 
-           <div className="grid grid-cols-3 bg1">
+           <div className="grid md:grid-cols-3 bg1">
                 <WelcomeMssg />
                 
 <div>

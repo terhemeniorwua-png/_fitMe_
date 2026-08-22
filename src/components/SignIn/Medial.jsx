@@ -1,5 +1,6 @@
 import { BiLogoGoogle } from "react-icons/bi";
 import { FaApple } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 
 const Socials = () => {
@@ -19,7 +20,7 @@ const Socials = () => {
 
                 </div>
 
-                <p className="text-[10px] text-center pt-5">Dont have an account? <a href="#" className="text-red-500">Sing Up</a> </p>
+                <p className="text-[10px] text-center pt-5">Dont have an account? <Link to='/signUp'className="text-red-500">Sing Up</Link> </p>
 
             </div>
         </>

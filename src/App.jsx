@@ -10,6 +10,7 @@ import OnYourMind from './components/Home/Taste'
 import SearchResults from './components/FunctionalResults/SearchResult'
 import ProductDetails from './components/FunctionalResults/productDetails'
 import SignUpPage from './components/SignIn/SignInPage'
+import SignUp from './components/SignIn/SignUp'
 
 function App() {
   
@@ -63,6 +64,16 @@ function App() {
             path='/'
             element={
                 <SignUpPage setLoggedN={setLoggedIn}/>
+
+                
+            }
+            />
+            
+              <Route
+            path='/signUp'
+            element={
+
+                <SignUp />
                 
             }
           />
@@ -138,7 +149,7 @@ function App() {
 
          }
 
-        {/* {console.log(products)} */}
+        {console.log(products)}
     </>
   );
 }
