@@ -11,6 +11,7 @@ const SignInForm = ({setLoggedIn}) => {
 
     return ( 
         <>
+        
               <form onSubmit={(e)=>{
                 e.preventDefault()
                
@@ -26,10 +27,8 @@ const SignInForm = ({setLoggedIn}) => {
               }}>
 
                 <div className="space-y-5">
-                    
 
-
-                      <div className="flex items-center border rounded-lg border-gray-200 py-1">
+                      <div className="flex items-center border rounded-lg border-gray-200 py-1 ">
                         <div className="p-2">
                             <BiMailSend className="text-xl"/>
                         </div>

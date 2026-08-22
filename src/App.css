@@ -7,3 +7,10 @@
 .img-hovered:hover{
     transform: scale(1.05);
 }
+
+.bg1{
+    background-image: url(../public/bg-img.png);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size:55em;
+}

@@ -9,7 +9,7 @@ import SearchByRest from './components/Home/SearchByRes'
 import OnYourMind from './components/Home/Taste'
 import SearchResults from './components/FunctionalResults/SearchResult'
 import ProductDetails from './components/FunctionalResults/productDetails'
-import SignIn from './components/SignIn/SignIn'
+import SignUpPage from './components/SignIn/SignInPage'
 
 function App() {
   
@@ -62,7 +62,8 @@ function App() {
             <Route
             path='/'
             element={
-                <SignIn setLoggedIn={setLoggedIn}/>
+                <SignUpPage setLoggedN={setLoggedIn}/>
+                
             }
           />
           </Routes>
