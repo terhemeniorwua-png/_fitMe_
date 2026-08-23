@@ -22,9 +22,9 @@ const ProductDetails = ({product, cart, setCart}) => {
                     <BiUser />
             </div>
            
-           <div className="grid  gap-5">
+           <div className="grid gap-5">
 
-            {console.log(product)}
+            {/* {console.log(product)} */}
                
                  <Product 
                 img={product.image}
@@ -35,18 +35,36 @@ const ProductDetails = ({product, cart, setCart}) => {
                 caloriesPerServing={product.caloriesPerServing}
                 cookTimeMinutes={product.cookTimeMinutes}
                 />
-                
 
-                <div className="pt-6">
-                    <button className="font-black bg-amber-600 py-3 px-5 w-[70%] rounded-3xl text-white" onClick={()=>{
-                        // console.log(product)
-                        setCart([product])
-                    }}>Add to Cart</button>
-                </div>
+
            </div>
            
-           
-           <Cart funcDisplayCart={handleCartDisplay} cart={cart}/>
+           <div className="grid grid-cols-[1fr_3fr_2fr] px-20 gap-8 py-5">
+                <div className="flex flex-col text-right pr-5">
+                    <h3 className="text-amber-600">Recommended</h3>
+                    <ul className="space-y-3">
+                        <li>{product.ingredients[0]}</li>
+                        <li>{product.ingredients[1]}</li>
+                        <li>{product.ingredients[2]}</li>
+                        <li>{product.ingredients[3]}</li>
+                        <li>{product.ingredients[4]}</li>
+                    </ul>
+                </div>
+
+                <div className="flex gap-5 items-center">
+                   <div>
+                     <h2 className="font-black">{product.mealType[0]} for 2- veg(Save upto Rs.45) <span className="block">${product.userId}</span></h2>
+
+                    <p className="text-gray-400">{product.mealType[0]}: One meal to rule them all! Grab this mega saver combo with your choice of 2 veg wraps, Aloo Paratha (2 pcs), chole and Curd lunchbox and 2 choco lava cakes. This is just bliss on a plate!</p>
+
+                   </div>
+                    <div className="overflow-hidden w-full">
+                        <img src={product.image} alt="image" className="h-36 img-hovered"/>
+                    </div>
+                </div>
+
+                <Cart funcDisplayCart={handleCartDisplay} cart={cart}/>
+           </div>
         </>
      );
 }
