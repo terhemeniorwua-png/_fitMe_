@@ -53,10 +53,13 @@ function App() {
       }
 
 
+       let [cart, setCart]  = useState([])
+
+
   return (
     <>
         {
-          !loggedIn? 
+          loggedIn? 
           (
             <Routes>
               
@@ -136,7 +139,10 @@ function App() {
           element={
             <ProductDetails
               product={selectedProduct}
+              cart={cart}
+              setCart={setCart}
             />
+
           }
         />
 
