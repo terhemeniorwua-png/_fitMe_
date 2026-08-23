@@ -5,7 +5,7 @@ import Product from "./Product";
 
 const ProductDetails = ({product, cart, setCart}) => {
 
-    // console.log(product)
+    console.log(cart)
    
     const handleCartDisplay = (e) =>{
         document.getElementById('cart').classList.toggle('hidden')
@@ -15,9 +15,9 @@ const ProductDetails = ({product, cart, setCart}) => {
     return ( 
         <>
             <div className="flex justify-end gap-5 items-center text-3xl pr-10">
-                    <div className="relative">
+                    <div className="relative my-5">
                         <BiCart onClick={(e)=>{handleCartDisplay(e)}}/>
-                        <p className="bg-amber-600 absolute text-white text-[10px] rounded-full p-1">0</p>
+                        <p className="bg-amber-600 absolute text-white text-[10px] rounded-full bottom-4 left-4 p-1">{cart.length}</p>
                     </div>
                     <BiUser />
             </div>
@@ -39,8 +39,8 @@ const ProductDetails = ({product, cart, setCart}) => {
 
            </div>
            
-           <div className="grid grid-cols-[1fr_3fr_2fr] px-20 gap-8 py-5">
-                <div className="flex flex-col text-right pr-5">
+           <div className="max-md:space-y-10 grid md:grid-cols-[1fr_3fr_2fr] px-10 md:px-20 md:gap-8 py-5">
+                <div className="flex flex-col md:text-right pr-5">
                     <h3 className="text-amber-600">Recommended</h3>
                     <ul className="space-y-3">
                         <li>{product.ingredients[0]}</li>
@@ -51,15 +51,21 @@ const ProductDetails = ({product, cart, setCart}) => {
                     </ul>
                 </div>
 
-                <div className="flex gap-5 items-center">
+                <div className="md:flex gap-5 items-center">
                    <div>
                      <h2 className="font-black">{product.mealType[0]} for 2- veg(Save upto Rs.45) <span className="block">${product.userId}</span></h2>
 
                     <p className="text-gray-400">{product.mealType[0]}: One meal to rule them all! Grab this mega saver combo with your choice of 2 veg wraps, Aloo Paratha (2 pcs), chole and Curd lunchbox and 2 choco lava cakes. This is just bliss on a plate!</p>
 
                    </div>
-                    <div className="overflow-hidden w-full">
-                        <img src={product.image} alt="image" className="h-36 img-hovered"/>
+                    <div className="overflow-hidden w-full relative">
+                        <img src={product.image} alt="image" className="h-36 img-hovered max-md:m-auto  max-md:pt-10 max-md:w-full"/>
+
+                        <button className="bg-white text-green-500 p-5 rounded-lg shadow-2xl absolute -bottom-5 left-5" onClick={()=>{
+                            setCart(prevCart =>[...prevCart,
+                                product]
+                            )
+                        }}>Add +</button>
                     </div>
                 </div>
 

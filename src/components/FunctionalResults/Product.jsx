@@ -5,13 +5,13 @@ import { FaStar } from "react-icons/fa6";
 const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinutes, reviewCount}) => {
     return ( 
         <>
-            <div className="grid grid-cols-3 gap-20 px-44 items-center justify-center bg-black text-white py-10">
+            <div className="grid lg:grid-cols-3 lg:gap-20 px-10 lg:px-44 items-center justify-center bg-black text-white py-10">
                  <div>
                     <img src={img} alt={name} className="w-full"/>
                 </div>
                  
 
-                    <div className="space-y-5">
+                    <div className="max-md:py-5 space-y-10 md:space-y-5">
                         <h1 className="font-semibold text-2xl">{name}</h1>
                         <p>{cuisine}</p>
 
