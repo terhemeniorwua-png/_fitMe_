@@ -33,6 +33,7 @@ const ProductDetails = ({product, cart, setCart}) => {
                 reviewCount= {product.reviewCount}
                 cuisine={product.cuisine}
                 caloriesPerServing={product.caloriesPerServing}
+                cookTimeMinutes={product.cookTimeMinutes}
                 />
                 
 
