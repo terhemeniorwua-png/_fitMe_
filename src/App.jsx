@@ -56,6 +56,11 @@ function App() {
 
        let [cart, setCart]  = useState([])
 
+        const handleCartDisplay = (e) =>{
+          // console.log('clicked')
+        document.getElementById('cart').classList.toggle('hidden')
+        }
+
 
   return (
     <>
@@ -66,13 +71,16 @@ function App() {
 
               <Route
               path='/'
-              element={<SecureCheckout />}
+              element={
+              <SecureCheckout cartItems={cart}
+              />}
               />
               
             <Route
             path='./'
             element={
-                <SignUpPage setLoggedN={setLoggedIn}/>
+                <SignUpPage setLoggedN={setLoggedIn}
+                />
 
                 
             }
@@ -94,6 +102,8 @@ function App() {
         products={products}
         setProducts={setProducts}
         setSearch={setSearch}
+        cart={cart}
+        func={handleCartDisplay}
       />
 
       <Routes>
@@ -151,6 +161,17 @@ function App() {
               product={selectedProduct}
               cart={cart}
               setCart={setCart}
+              handleCartDisplay={handleCartDisplay}
+            />
+
+          }
+        />
+
+         <Route
+          path='/checkout'
+          element={
+            <SecureCheckout
+              
             />
 
           }

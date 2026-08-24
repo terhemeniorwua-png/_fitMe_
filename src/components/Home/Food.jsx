@@ -1,5 +1,5 @@
 import { BiStar } from "react-icons/bi";
-import { FaPeopleGroup } from "react-icons/fa6";
+import { FaPeopleGroup, FaStar } from "react-icons/fa6";
 import group from '/Group.png'
 
 const Food = ({id, img, cuisine, name, rating, cookTimeMinutes, caloriesPerServing, func}) => {
@@ -15,7 +15,7 @@ const Food = ({id, img, cuisine, name, rating, cookTimeMinutes, caloriesPerServi
                                 <h1 className="pt-5">{name}</h1>
                                 <div className="flex justify-between">
                                     <small className="pt-5">{cuisine}</small>
-                                    <small className="pt-5 flex items-center gap-1"><BiStar className={rating >= 4.8? 'text-green-500' : 'text-amber-500'}/> {rating}</small>
+                                    <small className="pt-5 flex items-center gap-1"><FaStar className={rating >= 4.8? 'text-green-500' : 'text-amber-500'}/> {rating}</small>
                                 </div>
                                 <div className="flex justify-between">
                                     <small className="pt-5 flex gap-1 items-center"><img src={group} alt="icon" className="w-3"/> {cookTimeMinutes} mins</small>

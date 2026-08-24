@@ -1,12 +1,14 @@
-    import { BiLock, BiSearch } from 'react-icons/bi';
+    import { BiSearch, BiShoppingBag } from 'react-icons/bi';
     import logo from '/Logo.png'
     import { useState } from 'react';
     import { useNavigate } from 'react-router-dom';
 
-    const Header = ({products, setProducts, setSearch}) => {
+    const Header = ({products, setProducts, setSearch, cart, func}) => {
         // console.log(products)
 
         let navigate = useNavigate()
+
+        
 
         const [inputValue, setInputValue] = useState('')
 
@@ -43,6 +45,8 @@
                         <img src={logo} alt="Logo" onClick={()=>{
                             navigate('/')
                         }}/>
+
+                        
                     </div>
 
     {/* search bar */}
@@ -51,12 +55,25 @@
     {/* Mobile */}
             <div>
 
-                <div className='relative md:hidden'>
+                <div className='md:hidden'>
+                    <div className='relative'>
                     <BiSearch className='absolute right-5 md:hidden rotate-90 text-4xl' onClick={(e)=>{
                         e.currentTarget.classList.add('hidden')
                         document.getElementById('search').classList.remove('hidden')
                     }}/>
                 </div>
+
+                     <div className="flex justify-end absolute">
+           
+                    <div className="relative my-5 hover:cursor-pointer " onClick={(e)=>{func(e)}}>
+                        <BiShoppingBag className='text-2xl'/>
+                     <p className='bg-amber-600 text-[10px] absolute text-center rounded-full p-1 text-white bottom-3 left-3'>{cart.length}</p>
+                    </div>
+                </div>
+                </div>
+
+
+
 
                 <div className='border rounded p-1 px-2 flex items-center w-[90%] hidden' id='search'>
                             <input
@@ -84,10 +101,22 @@
 
 
                         </div>
-                        <div>
-                            <BiLock className='text-2xl'/>
-                        </div>
-                        <button className='bg-black text-white text-sm px-5 py-1 rounded' onClick={(e) =>{handelSearch(e)}}>Search</button>
+
+
+
+ <div className="flex justify-end gap-5 items-center text-3xl pr-10">
+           
+                    <div className="relative my-5 hover:cursor-pointer" onClick={(e)=>{func(e)}}>
+                        <BiShoppingBag className='text-2xl'/>
+                     <p className='bg-amber-600 text-[10px] absolute text-center rounded-full p-1 text-white bottom-3 left-3'>{cart.length}</p>
+                    </div>
+            </div>
+
+
+
+
+
+                        <button className='bg-black text-white text-sm px-5 py-1 rounded' onClick={(e) =>{handelSearch(e)}}>Sign In</button>
                     </div>
                     </div>
                 </div>

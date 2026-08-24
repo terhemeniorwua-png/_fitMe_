@@ -3,30 +3,18 @@ import { FaHeart } from "react-icons/fa6";
 import Cart from "./Cart";
 import Product from "./Product";
 import Button from "../Utilities/Button";
+import { Link } from "react-router-dom";
 
-const ProductDetails = ({product, cart, setCart}) => {
+const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
 
-    console.log(cart)
+    // console.log(cart)
    
-    const handleCartDisplay = (e) =>{
-        document.getElementById('cart').classList.toggle('hidden')
-    }
-
-    const handleCheckout = () => {
-        console.log('cl')
-    }
+   
 
 
     return ( 
         <>
-            <div className="flex justify-end gap-5 items-center text-3xl pr-10">
            
-                    <div className="relative my-5 hover:cursor-pointer" onClick={(e)=>{handleCartDisplay(e)}}>
-                        <BiCart/>
-                        <p className="bg-amber-600 absolute text-white text-[10px] rounded-full bottom-4 left-4 p-1">{cart.length}</p>
-                    </div>
-                    <BiUser />
-            </div>
            <div className="grid gap-5">
 
             {/* {console.log(product)} */}
@@ -88,11 +76,13 @@ const ProductDetails = ({product, cart, setCart}) => {
                     </div>
                 <   p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
                 </div>
+                
 
+                <Link to='/checkout'>
                 <Button 
                 value="Checkout"
-                fuctionality={handleCheckout}
                 />
+                </Link>
             </div>
            </div>
         </>
