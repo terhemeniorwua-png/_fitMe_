@@ -2,6 +2,7 @@ import { BiCart, BiHeart, BiStar, BiUser } from "react-icons/bi";
 import { FaHeart } from "react-icons/fa6";
 import Cart from "./Cart";
 import Product from "./Product";
+import Button from "../Utilities/Button";
 
 const ProductDetails = ({product, cart, setCart}) => {
 
@@ -11,17 +12,21 @@ const ProductDetails = ({product, cart, setCart}) => {
         document.getElementById('cart').classList.toggle('hidden')
     }
 
+    const handleCheckout = () => {
+        console.log('cl')
+    }
+
 
     return ( 
         <>
             <div className="flex justify-end gap-5 items-center text-3xl pr-10">
-                    <div className="relative my-5">
-                        <BiCart onClick={(e)=>{handleCartDisplay(e)}}/>
+           
+                    <div className="relative my-5 hover:cursor-pointer" onClick={(e)=>{handleCartDisplay(e)}}>
+                        <BiCart/>
                         <p className="bg-amber-600 absolute text-white text-[10px] rounded-full bottom-4 left-4 p-1">{cart.length}</p>
                     </div>
                     <BiUser />
             </div>
-           
            <div className="grid gap-5">
 
             {/* {console.log(product)} */}
@@ -68,8 +73,27 @@ const ProductDetails = ({product, cart, setCart}) => {
                         }}>Add +</button>
                     </div>
                 </div>
+                
 
-                <Cart funcDisplayCart={handleCartDisplay} cart={cart}/>
+                <div id="cart" className="hidden max-md:absolute max-md:top-28 bg-white pb-2">
+                <Cart 
+                funcDisplayCart={handleCartDisplay} 
+                cart={cart}
+                />
+
+                <div className="flex justify-between pb-5 pr-2 pt-5">
+                    <div className="space=y-2">
+                        < p className="font-bold text-xl px-5">Subtotal</p> 
+                         <small className="px-5">Extral charges may apply</small>
+                    </div>
+                <   p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
+                </div>
+
+                <Button 
+                value="Checkout"
+                fuctionality={handleCheckout}
+                />
+            </div>
            </div>
         </>
      );

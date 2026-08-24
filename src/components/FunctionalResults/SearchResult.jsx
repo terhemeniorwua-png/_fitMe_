@@ -2,9 +2,9 @@ import { BiStar } from "react-icons/bi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import group from '/Group.png'
 
-const SearchResults = ({products}) => {
+const SearchResults = ({products, func}) => {
 
-    console.log(products)
+    // console.log(products)
     
     return ( 
         <>
@@ -19,7 +19,7 @@ const SearchResults = ({products}) => {
                 <div className="grid md:grid-cols-3 gap-10 md:my-10">
                     {
                     products.recipes.map(product=>(
-                        <div key={product.id} className="bg-gray-100 px-5 py-2 flex items-center gap-10 img-hovered">
+                        <div key={product.id} className="bg-gray-100 px-5 py-2 flex items-center gap-10 img-hovered" onClick={()=>{func(product.id)}}>
                             <div className="w-[30%]">
                                 <img src={product.image} alt="" className="w-full rounded-xl"/>
                                 </div>

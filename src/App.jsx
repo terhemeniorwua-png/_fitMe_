@@ -11,6 +11,7 @@ import SearchResults from './components/FunctionalResults/SearchResult'
 import ProductDetails from './components/FunctionalResults/productDetails'
 import SignUpPage from './components/SignIn/SignInPage'
 import SignUp from './components/SignIn/SignUp'
+import SecureCheckout from './components/FunctionalResults/SecureCheckout'
 
 function App() {
   
@@ -62,9 +63,14 @@ function App() {
           loggedIn? 
           (
             <Routes>
+
+              <Route
+              path='/'
+              element={<SecureCheckout />}
+              />
               
             <Route
-            path='/'
+            path='./'
             element={
                 <SignUpPage setLoggedN={setLoggedIn}/>
 
@@ -112,6 +118,7 @@ function App() {
                 products={products}
                 setProducts={setProducts}
                 setSearch={setSearch}
+               
               />
 
               <OnYourMind
@@ -125,7 +132,10 @@ function App() {
         <Route
           path="/search"
           element={
-            <SearchResults products={products} />
+            <SearchResults 
+            products={products} 
+             func={handleDetails}
+            />
             
           }
             
