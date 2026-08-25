@@ -7,16 +7,17 @@ const Subscription = () => {
     let [active, setActive] = useState('none')
     let [time, setTime] = useState('')
     let [date, setDate] = useState('')
+    let [days, setDays] = useState('1')
 
     return ( 
         <>
         
-            <div className="text-[12px] font-semibold md:flex justify-between">
+            <div className="text-[14px] font-semibold md:flex justify-between">
 
                 <div>
                     <h5 className=" pb-10">Type of subscription?</h5>
 
-                   <ul className="grid grid-cols-3 gap-10 text-center font-semibold">
+                   <ul className="grid grid-cols-3 gap-5 text-center">
                             <li className={`border-b cursor-pointer pb-2 ${active === 'Monthly' && ('text-[#FC8019]')}`} onClick={(e)=>{
                                 setActive('Monthly')
                    }}>Monthly</li>
@@ -29,14 +30,15 @@ const Subscription = () => {
                    </ul>
 
                     <h5 className=" pb-2 pt-10">What time you want us to deliver?</h5>
-                    <div className="border-b w-[50%] rounded p-1 flex gap-2 items-center">
-                        <BiSolidCarBattery />
+                    <div className="flex gap-2 items-center">
+                        {/* <BiSolidCarBattery /> */}
                         <input 
                         type="time" 
                         value={time}
                         onChange={(e)=>{setTime(e.target.value)}}
-                        className="cursor-pointer outline-0"
+                        className="cursor-pointer outline-0 border-b w-[50%] rounded p-1 "
                         />
+                        <p className="text-[#FC8019]">24hr</p>
                     </div>
                 </div>
 
@@ -45,12 +47,22 @@ const Subscription = () => {
                 <div>
                     <h5 className=" pb-10">What's the plan?</h5>
 
-                    <div className="flex items-center justify-between">
-                        <div className="border border-dashed rounded-lg p-2">
-                            1-Days/weeks
+                    <div className="flex text-[12px] items-center justify-between">
+                        <div className="flex items-center border rounded-lg p-3" onClick={(e)=>{
+                            e.currentTarget.classList.add('text-[#FC8019]')
+                        }}>
+                            <input 
+                            type="number" 
+                            min='1'
+                            max='5'
+                            value={days}
+                            onChange={(e)=>{setDays(e.target.value)}}
+                            className="outline-0 w-[25px]"
+                            />
+                            <p>-Days/weeks</p>
                         </div>
 
-                        <div className="border border-dashed rounded-lg p-2">
+                        <div className="border rounded-lg p-3">
                             5-Days/weeks
                         </div>
                     </div>
@@ -67,5 +79,7 @@ const Subscription = () => {
         </>
      );
 }
+
+
  
 export default Subscription;

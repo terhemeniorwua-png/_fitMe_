@@ -12,20 +12,20 @@ const Address = () => {
         <>
         <div className="w-full">
 
-        <h2 className="flex items-center font-semibold gap-2"><FaMapMarkerAlt className='text-3xl my-5 text-[#FC8019]'/> Delivery address</h2>
+        <h2 className="flex items-center font-semibold gap-2 text-xl"><FaMapMarkerAlt className='text-xl my-5 text-[#FC8019]'/> Delivery address</h2>
 
             <div className="grid justify-center gap-5">
 
                 <div className="grid md:grid-cols-2 gap-10 justify-start">
 
-                    <div className={`px-5 py-5 rounded-2xl text-sm border border-dashed border-amber-600 ${location === 'first' && 'locationBg'}`}  onClick={()=>{
+                    <div className={`px-5 py-5 rounded-2xl text-sm border-2 border-dashed border-amber-600 ${location === 'first' && 'locationBg'}`}  onClick={()=>{
                     setLocation('first')
                 }}>
                         <FaMapMarkerAlt className='text-3xl my-2'/>
                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam id error consequatur qui dolores, omnis eos eveniet et veritatis fuga officia alias placeat illum, dicta voluptates suscipit maiores quis!
 
                         </div>
-                        <div className={`px-5 py-5 rounded-2xl text-sm border border-dashed border-amber-600 ${location === 'second' && 'locationBg'}`}  onClick={()=>{
+                        <div className={`px-5 py-5 rounded-2xl text-sm border-2 border-dashed border-amber-600 ${location === 'second' && 'locationBg'}`}  onClick={()=>{
                     setLocation('second')
                 }}>
                         <FaMapMarkerAlt className='text-3xl my-2 '/>
@@ -34,15 +34,15 @@ const Address = () => {
                 </div>
           
           <div>
-            <h2 className="flex items-center font-semibold gap-2"><FaMapMarkerAlt className='text-3xl my-5 text-[#FC8019]'/>Type of Order</h2>
+            <h2 className="flex items-center font-semibold gap-2 text-xl"><FaMapMarkerAlt className='text-3xl my-5 text-[#FC8019]'/>Type of Order</h2>
 
-            <div className="md:flex space-y-5 items-center gap-5 mb-10">
+            <div className="md:flex max-md:space-y-5 items-center gap-5 mb-10">
 
-                <button className="flex items-center gap-2 text-[12px] border border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> subscription </button>
+                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> subscription </button>
 
-                <button className="flex items-center gap-2 text-[12px] border border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Schedule order </button>
+                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Schedule order </button>
 
-                <button className="flex items-center gap-2 text-[12px] border border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Order now </button>
+                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Order now </button>
             </div>
 
                 <Subscription />

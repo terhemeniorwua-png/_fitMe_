@@ -6,7 +6,7 @@ const Button = ({value, fuctionality}) => {
         
             <button
             onClick={fuctionality}
-            className="py-3 w-full text-white rounded-3xl font-bold bg-amber-600 hover:cursor-pointer"
+            className="py-3 w-full text-white rounded-lg font-bold bg-amber-600 hover:cursor-pointer"
             >{value}</button>
         </>
      );

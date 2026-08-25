@@ -12,6 +12,9 @@ import ProductDetails from './components/FunctionalResults/productDetails'
 import SignUpPage from './components/SignIn/SignInPage'
 import SignUp from './components/SignIn/SignUp'
 import SecureCheckout from './components/FunctionalResults/SecureCheckout'
+import Cart from './components/FunctionalResults/Cart'
+import { Link } from "react-router-dom";
+import Button from './components/Utilities/Button'
 
 function App() {
   
@@ -170,12 +173,46 @@ function App() {
          <Route
           path='/checkout'
           element={
-            <SecureCheckout
-              
-            />
+             <div>
+                  <div className="px-5">
+                
+                    <h2 className="text-xl font-semibold md:px-16">Secure Checkout</h2>
+                <hr />
+                </div>
 
+                <div className=" max-md:flex max-md:flex-col-reverse grid md:grid-cols-[2fr_1fr] gap-5 md:gap-36 px-5 lg:px-16 md:pt-5">
+                  <div>
+                    <SecureCheckout />
+                  </div>
+                  <div>
+                    <Cart cart={cart}/>
+                     <div>
+                           <div className="flex justify-between pb-5 pr-2 pt-5">
+                              <div className="space-y-2">
+                               < p className="font-bold text-xl px-5">Total</p> 
+                               </div>
+                                 <p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
+                            </div>
+
+
+
+                        <Link>
+                            <Button 
+                            value='Proceed to payment'
+                            path='/signUp'
+                        />
+                        </Link>
+                    </div>
+                     
+                  </div>
+
+             </div>
+            
+            </div>
           }
         />
+
+        
 
       </Routes>
 

@@ -3,6 +3,8 @@ import Button from "../Utilities/Button";
 
 const Cart = ({funcDisplayCart, cart}) => {
 
+    console.log(cart)
+
     
 
     return ( 
@@ -20,7 +22,7 @@ const Cart = ({funcDisplayCart, cart}) => {
                         <div>
                             <p>from <span className="text-amber-500">{item.mealType[0]}</span></p>
                             <p>{item.name}</p>
-                            <small className="font-black">${item.reviewCount}</small>
+                            <small className="font-semibold text-gray-500">${item.reviewCount}</small>
                         </div>
                         <div>
                             <span onClick={(e)=>{

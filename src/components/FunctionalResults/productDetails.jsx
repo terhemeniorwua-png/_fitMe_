@@ -1,5 +1,3 @@
-import { BiCart, BiHeart, BiStar, BiUser } from "react-icons/bi";
-import { FaHeart } from "react-icons/fa6";
 import Cart from "./Cart";
 import Product from "./Product";
 import Button from "../Utilities/Button";
@@ -44,7 +42,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                     </ul>
                 </div>
 
-                <div className="md:flex gap-5 items-center">
+                <div className="md:flex gap-5">
                    <div>
                      <h2 className="font-black">{product.mealType[0]} for 2- veg(Save upto Rs.45) <span className="block">${product.userId}</span></h2>
 
@@ -70,7 +68,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                 />
 
                 <div className="flex justify-between pb-5 pr-2 pt-5">
-                    <div className="space=y-2">
+                    <div className="space-y-2">
                         < p className="font-bold text-xl px-5">Subtotal</p> 
                          <small className="px-5">Extral charges may apply</small>
                     </div>
