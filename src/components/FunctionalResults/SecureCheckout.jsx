@@ -13,13 +13,13 @@ const SecureCheckout = ({cartItems}) => {
     return ( 
 
         <>
-            <div>
-                <p className="px-20">
-                    <h2 className="font-semibold">Secure Checkout</h2>
+            <div className="px-5">
+                
+                    <h2 className="font-semibold md:px-20">Secure Checkout</h2>
                 <hr />
-                </p>
+                </div>
 
-                <div className="grid grid-cols-[2fr_1fr] gap-36 px-10 pt-20">
+                <div className=" max-md:flex max-md:flex-col-reverse grid md:grid-cols-[2fr_1fr] gap-5 md:gap-36 px-5 lg:px-10 md:pt-5">
 
                     <Address />
 
@@ -33,7 +33,7 @@ const SecureCheckout = ({cartItems}) => {
                         />
                         </Link>
                     </div>
-            </div>
+            
                
                 
         </div>
