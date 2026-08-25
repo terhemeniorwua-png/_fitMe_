@@ -4,7 +4,16 @@ import Button from "../Utilities/Button";
 import Address from "./AddressGuide";
 
 
-const SecureCheckout = () => {
+const SecureCheckout = ({
+    time,
+setTime,
+days,
+setDays,
+date,
+setDate,
+active,
+setActive
+}) => {
 
     // console.log(cartItems)
 
@@ -16,7 +25,17 @@ const SecureCheckout = () => {
 
                
 
-                    <Address />
+                    <Address 
+                    
+                        time = {time }
+                        setTime = {setTime}
+                        days = {days}
+                        setDays = {setDays}
+                        date = {date}
+                        setDate = {setDate}
+                        active={active}
+                        setActive={setActive}
+                    />
 
 
                    

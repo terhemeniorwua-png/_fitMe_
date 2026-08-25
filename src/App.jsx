@@ -15,6 +15,7 @@ import SecureCheckout from './components/FunctionalResults/SecureCheckout'
 import Cart from './components/FunctionalResults/Cart'
 import { Link } from "react-router-dom";
 import Button from './components/Utilities/Button'
+import { BsFillExclamationCircleFill } from 'react-icons/bs'
 
 function App() {
   
@@ -25,7 +26,10 @@ function App() {
       let [products, setProducts] = useState({ recipes: [] })
       let [search, setSearch] = useState(false)
       let [selectedProduct, setSelectedProduct] = useState(null)
-  
+      let [time, setTime] = useState('00:00 AM')
+      let [date, setDate] = useState('')
+      let [days, setDays] = useState('1')
+      let [active, setActive] = useState('none')
   
       const FetchApi = async ()=>{
           try{
@@ -63,6 +67,15 @@ function App() {
           // console.log('clicked')
         document.getElementById('cart').classList.toggle('hidden')
         }
+
+        let [cartPrice, setCartPrice] = useState(0)
+
+       useEffect(()=>{
+        cart.reduce((total, item)   =>{
+                                   
+          setCartPrice(total += item.reviewCount)
+          }, 0)
+       }, [cart])
 
 
   return (
@@ -180,19 +193,86 @@ function App() {
                 <hr />
                 </div>
 
-                <div className=" max-md:flex max-md:flex-col-reverse grid md:grid-cols-[2fr_1fr] gap-5 md:gap-36 px-5 lg:px-16 md:pt-5">
+                <div className=" max-md:flex max-md:flex-col-reverse grid 
+                md:grid-cols-[2fr_1fr] gap-5 md:gap-36 px-5 lg:px-16 md:pt-5">
                   <div>
-                    <SecureCheckout />
+                    <SecureCheckout 
+                    time={time}
+                    setTime={setTime}
+                    days={days}
+                    setDays={setDays}
+                    date={date}
+                    setDate={setDate}
+                    active={active}
+                    setActive={setActive}
+                    />
                   </div>
                   <div>
                     <Cart cart={cart}/>
                      <div>
+
+
+                          <section className='text-sm space-y-5 text-gray-400 pt-10'>
+                            <h3>Bill details</h3>
+                            <div className='space-y-5'>
+
+                              <ul className='flex justify-between items-center'>
+                                <li>Item Total</li>
+                                <li>{cartPrice}</li>
+                              </ul>
+
+                              <ul className='flex justify-between items-center relative'>
+                                <li>Delivery Fee/12.9kms <br />
+                                  <BsFillExclamationCircleFill className='text-lg absolute left-36 bottom-5'/>
+                                  Custom Delivery time
+                                </li>
+                                <li>$131.00</li>
+                              </ul>
+
+
+                              <ul className='flex justify-between items-center relative'>
+                                <li className='flex items-center'>Taxes and charges 
+                                  <BsFillExclamationCircleFill className='text-lg '/>
+                                </li>
+                                <li>$2.00</li>
+                              </ul>
+                            </div>
+
+
+                            <p>{active} + {days} Days/Week plan + {time} Delivery  time</p>
+
+
+
+                            <div>
+                                <ul className='flex justify-between'>
+                                  <li>Total</li>
+                                  <li>
+                                  ${cartPrice + 131.00 + 2}
+                                  </li>
+                              </ul>
+
+                              <ul className='flex justify-between'>
+                                  <li>Discount</li>
+                                  <li>
+                                  $4.00
+                                  </li>
+                              </ul>
+                            </div>
+                          </section>
+
+
+
+
+
+
                            <div className="flex justify-between pb-5 pr-2 pt-5">
                               <div className="space-y-2">
                                < p className="font-bold text-xl px-5">Total</p> 
                                </div>
-                                 <p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
+                                 <p className="font-bold text-xl">${cartPrice + 131.00 + 2 - 4}</p>
                             </div>
+
+                            
 
 
 
@@ -223,7 +303,6 @@ function App() {
 
          }
 
-        {console.log(products)}
     </>
   );
 }

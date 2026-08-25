@@ -2,12 +2,10 @@ import { useState } from "react";
 import { BiSolidCarBattery } from "react-icons/bi";
 
 
-const Subscription = () => {
+const Subscription = ({time, setTime, date, setDate, days, setDays, active, setActive}) => {
 
-    let [active, setActive] = useState('none')
-    let [time, setTime] = useState('')
-    let [date, setDate] = useState('')
-    let [days, setDays] = useState('1')
+    const [clicked, setClicked] = useState('none')
+      
 
     return ( 
         <>
@@ -31,7 +29,7 @@ const Subscription = () => {
 
                     <h5 className=" pb-2 pt-10">What time you want us to deliver?</h5>
                     <div className="flex gap-2 items-center">
-                        {/* <BiSolidCarBattery /> */}
+                        
                         <input 
                         type="time" 
                         value={time}
@@ -48,8 +46,8 @@ const Subscription = () => {
                     <h5 className=" pb-10">What's the plan?</h5>
 
                     <div className="flex text-[12px] items-center justify-between">
-                        <div className="flex items-center border rounded-lg p-3" onClick={(e)=>{
-                            e.currentTarget.classList.add('text-[#FC8019]')
+                        <div className={`border rounded-lg flex p-3 ${clicked === 'S' && 'text-[#FC8019]'}`} onClick={()=>{
+                            setClicked('S')
                         }}>
                             <input 
                             type="number" 
@@ -59,11 +57,14 @@ const Subscription = () => {
                             onChange={(e)=>{setDays(e.target.value)}}
                             className="outline-0 w-[25px]"
                             />
-                            <p>-Days/weeks</p>
+                            <p>-Days/week</p>
                         </div>
 
-                        <div className="border rounded-lg p-3">
-                            5-Days/weeks
+                        <div className={`border rounded-lg p-3 ${clicked === 'T' && 'text-[#FC8019]'}`}  onClick={()=>{
+                            setDays('5')
+                            setClicked('T')
+                        }}>
+                            5-Days/week
                         </div>
                     </div>
 

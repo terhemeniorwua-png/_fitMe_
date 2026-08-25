@@ -4,7 +4,15 @@ import Subscription from "./Subscription";
 import { useState } from "react";
 
 
-const Address = () => {
+const Address = ( {  time,
+                setTime,
+                days,
+                setDays,
+                date,
+                setDate,
+                active,
+                setActive
+                }) => {
 
     let [location, setLocation] = useState('none')
 
@@ -45,7 +53,16 @@ const Address = () => {
                 <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Order now </button>
             </div>
 
-                <Subscription />
+                <Subscription 
+                        time = {time }
+                        setTime = {setTime}
+                        days = {days}
+                        setDays = {setDays}
+                        date = {date}
+                        setDate = {setDate}
+                        active={active}
+                        setActive={setActive}
+                        />
 
 
           </div>
