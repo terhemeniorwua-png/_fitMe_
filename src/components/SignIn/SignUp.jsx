@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -9,7 +10,10 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [error, setError] = useState('')
-
+     const [displayEye, setDisplayEye] = useState(false)
+     const [eye, setDisplayEy] =useState(false)
+     const [type, setType] = useState('password')
+     const [typ, setTyp] = useState('password')
     
 
     const handleSignUp = e =>{
@@ -93,26 +97,50 @@ const SignUp = () => {
                     />
                 </div>
 
-                <div className="border border-gray-200">
+                <div className="border border-gray-200 flex justify-between items-center">
                     <input 
-                    type="password" 
+                    type={type} 
                     value={password}
                     onChange={(e)=>{setPassword(e.target.value)}}
                     placeholder="Enter your password"
                     className="border-0 outline-0 w-[90%] p-2 text-sm"
                     required
                     />
+                      <div>
+                            {!displayEye? <FaEye className="text-xl mr-2" onClick={()=>{
+                                setType('text')
+                                setDisplayEye(true)
+                            }}/>:  <FaEyeSlash className="text-xl mr-2" onClick={()=>{
+                                setType('password')
+                                setDisplayEye(false)
+                                }}/>
+                        }
+                                                
+                                               
+                                            </div>
                 </div>
 
-                  <div className="border border-gray-200">
+                  <div className="border border-gray-200 flex justify-between items-center">
                     <input 
-                    type="password" 
+                    type={typ} 
                     value={confirmPassword}
                     onChange={(e)=>{setConfirmPassword(e.target.value)}}
                     placeholder="Confirm your password"
                     className="border-0 outline-0 w-[90%] p-2 text-sm"
                     required
                     />
+                      <div>
+                         {!eye? <FaEye className="text-xl mr-2" onClick={()=>{
+                            setTyp('text')
+                            setDisplayEy(true)
+                        }}/>:  <FaEyeSlash className="text-xl mr-2" onClick={()=>{
+                            setTyp('password')
+                            setDisplayEy(false)
+                        }}/>
+                        }
+                                                
+                                               
+                    </div>
                    
                 </div> 
                 <small className="italic text-red-500 hidden" id="confirm">{error}</small>
