@@ -85,7 +85,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                         < p className="font-bold text-xl px-5">Subtotal</p> 
                          <small className="px-5">Extral charges may apply</small>
                     </div>
-                        <p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
+                        <p className="font-bold text-xl">${cart.reduce((total, item)   =>total += (item.reviewCount * item.quantity), 0)}</p>
                 </div>
                 
 
