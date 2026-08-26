@@ -45,6 +45,8 @@ function App() {
               setError(err.message)
           }
       }
+
+      // console.log(products)
   
       useEffect(()=>{
           FetchApi()

@@ -1,8 +1,9 @@
+import { useState } from "react";
 
 
 const Schedule = () => {
 
-    const [time, setTime] =('00:00')
+    const [time, setTime] = useState('00:00')
     return ( <>
         <div className="flex items-center gap-10">
             <div className="border-b">
@@ -18,7 +19,7 @@ const Schedule = () => {
                         type="time" 
                         value={time}
                         onChange={(e)=>{setTime(e.target.value)}}
-                        className="cursor-pointer outline-0 border-b w-[50%] rounded p-1 "
+                        className="cursor-pointer outline-0 rounded p-1 "
                         />
                         <p className="text-[#FC8019]">24hr</p>
                     </div>
