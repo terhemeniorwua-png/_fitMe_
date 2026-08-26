@@ -109,7 +109,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
 
 
                 {/* ================= DESKTOP ================= */}
-                <div className='hidden md:grid grid-cols-2 items-center gap-10'>
+                <div className='hidden md:grid grid-cols-2 items-center gap-10 mb-5'>
 
                     {/* Logo */}
                     <div>
