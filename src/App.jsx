@@ -90,22 +90,23 @@ function App() {
   return (
     <>
         {
-          loggedIn? 
+          !loggedIn? 
           (
             <Routes>
 
-              <Route
+              {/* <Route
               path='/'
               element={
               <SecureCheckout cartItems={cart}
               />}
-              />
+              /> */}
               
             <Route
-            path='./'
+            path='/'
             element={
                 <SignUpPage setLoggedN={setLoggedIn}
                 />
+                
 
                 
             }

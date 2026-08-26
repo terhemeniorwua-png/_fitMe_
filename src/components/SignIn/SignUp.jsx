@@ -8,6 +8,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const [error, setError] = useState('')
 
     
 
@@ -19,12 +20,23 @@ const SignUp = () => {
 
 
         if(password !== confirmPassword){
+            setError('Confirmation password mismatch password')
             let mssg = document.getElementById('confirm')
             mssg.classList.toggle('hidden')
+
+            setTimeout(()=>{
+                setError('')
+            },3500)
             return false
         } else if(password.length < 5){
+            setError('Passord char must be more than 4 and must include number')
             document.getElementById('passVal').classList.toggle('hidden')
+             setTimeout(()=>{
+                setError('')
+            },3500)
             return false
+        } else{
+            alert('Account created successful')
         }
         
         let users = JSON.parse(localStorage.getItem('customers')) || [];
@@ -103,8 +115,8 @@ const SignUp = () => {
                     />
                    
                 </div> 
-                <small className="italic text-red-500 hidden" id="confirm">Confirmation password mismatch password</small>
-                <small className="italic text-red-500 hidden" id="passVal">Passord char must be more than 4 and must include number</small>
+                <small className="italic text-red-500 hidden" id="confirm">{error}</small>
+                <small className="italic text-red-500 hidden" id="passVal">{error}</small>
                 
 
                 <div className="flex justify-end text-[12px]">

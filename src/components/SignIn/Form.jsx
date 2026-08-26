@@ -1,13 +1,17 @@
 
 import { useState } from "react";
 import { BiLock, BiMailSend } from "react-icons/bi";
+import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SignInForm = ({setLoggedIn}) => {
 
 
     const [inputedEmail, setInputedEmail] = useState('')
     const [inputedPassword, setInputedPassword] = useState('')
+    const [type, setType] = useState('password')
+    const [displayEye, setDisplayEye] = useState(false)
 
     return ( 
         <>
@@ -19,7 +23,7 @@ const SignInForm = ({setLoggedIn}) => {
                     inputedEmail,
                     inputedPassword
                 }
-                console.log(user)
+                // console.log(user)
 
                 setInputedEmail('')
                 setInputedPassword('')
@@ -48,7 +52,7 @@ const SignInForm = ({setLoggedIn}) => {
                             <BiLock className="text-xl"/>
                         </div>
                         <input 
-                        type="password" 
+                        type={type} 
                         placeholder="Password"
                         value={inputedPassword}
                         onChange={(e)=>{setInputedPassword(e.target.value)}}
@@ -56,7 +60,16 @@ const SignInForm = ({setLoggedIn}) => {
                         
                         />
                         <div>
-                            <FaEye className="text-xl mr-2"/>
+                            {!displayEye? <FaEye className="text-xl mr-2" onClick={()=>{
+                                setType('text')
+                                setDisplayEye(true)
+                            }}/>:  <FaEyeSlash className="text-xl mr-2" onClick={()=>{
+                                setType('password')
+                                setDisplayEye(false)
+                            }}/>
+                        }
+                            
+                           
                         </div>
                     </div>
                 </div>
@@ -72,7 +85,7 @@ const SignInForm = ({setLoggedIn}) => {
                     </div>
 
                     <p>
-                        <a href="#" className="text-blue-400 text-[10px]">forgotten Password?</a>
+                        <Link to='/signUp' className="text-blue-400 text-[10px]">Forgotten Password?</Link>
                         </p>
                     </div>
 

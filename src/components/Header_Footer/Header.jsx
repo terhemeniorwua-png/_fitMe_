@@ -157,7 +157,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                         {/* Sign in */}
                         <button 
                             className='bg-black text-white text-sm px-5 py-2 rounded'
-                            onClick={(e) =>{handelSearch(e)}}
+                            
                         >
                             Signin
                         </button>
