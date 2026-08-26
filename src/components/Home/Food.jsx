@@ -15,11 +15,11 @@ const Food = ({id, img, cuisine, name, rating, cookTimeMinutes, caloriesPerServi
                                 <h1 className="pt-5">{name}</h1>
                                 <div className="flex justify-between">
                                     <small className="pt-5">{cuisine}</small>
-                                    <small className="pt-5 flex items-center gap-1"><FaStar className={rating >= 4.8? 'text-green-500' : 'text-amber-500'}/> {rating}</small>
+                                    <small className="pt-5 flex items-center gap-1"><FaStar className={rating >= 4.8? 'text-green-500' : 'text-amber-500 text-[5px]'}/> {rating}</small>
                                 </div>
                                 <div className="flex justify-between">
                                     <small className="pt-5 flex gap-1 items-center"><img src={group} alt="icon" className="w-3"/> {cookTimeMinutes} mins</small>
-                                    <small className="pt-5 flex items-center gap-1"><FaPeopleGroup className='text-amber-500'/> {caloriesPerServing} for two</small>
+                                    <small className="pt-5 flex items-center gap-1"><FaPeopleGroup className='text-amber-500  text-[5px]'/> {caloriesPerServing} for two</small>
                                 </div>
                             </div>
             </div>
