@@ -93,13 +93,6 @@ function App() {
           !loggedIn? 
           (
             <Routes>
-
-              {/* <Route
-              path='/'
-              element={
-              <SecureCheckout cartItems={cart}
-              />}
-              /> */}
               
             <Route
             path='/'

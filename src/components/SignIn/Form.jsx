@@ -13,6 +13,9 @@ const SignInForm = ({setLoggedIn}) => {
     const [type, setType] = useState('password')
     const [displayEye, setDisplayEye] = useState(false)
 
+    let users = JSON.parse(localStorage.getItem('customers'))
+    // console.log(users)
+
     return ( 
         <>
         
@@ -23,6 +26,15 @@ const SignInForm = ({setLoggedIn}) => {
                     inputedEmail,
                     inputedPassword
                 }
+
+               let getUser = users.find(person => inputedEmail === person.email && inputedPassword === person.password)
+
+               if(!getUser){
+                alert('User not found, signUp')
+                return false
+               } else{
+                 localStorage.setItem('currentUser', JSON.stringify(user))
+               }
                 // console.log(user)
 
                 setInputedEmail('')

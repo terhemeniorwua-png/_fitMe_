@@ -10,7 +10,7 @@ const SignUpPage = ({setLoggedN}) => {
         <>
 
            
-                <img src={logo} alt="" />
+                <img src={logo} alt="" className='p-5'/>
            
 
 
