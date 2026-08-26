@@ -6,11 +6,17 @@ import WelcomeMssg from "./WelcomeMss";
 
 const SignUpPage = ({setLoggedN}) => {
 
+    
+
     return ( 
         <>
 
            
-                <img src={logo} alt="" className='p-5'/>
+                <div className='flex justify-between items-center'>
+                    <img src={logo} alt="" className='p-5'/>
+
+                    <button className='text-white bg-[#FC8019] px-5 py-1 mr-5 font-semibold rounded'>Login</button>
+                </div>
            
 
 

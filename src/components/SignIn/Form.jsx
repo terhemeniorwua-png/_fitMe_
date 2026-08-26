@@ -27,7 +27,7 @@ const SignInForm = ({setLoggedIn}) => {
                     inputedPassword
                 }
 
-               let getUser = users.find(person => inputedEmail === person.email && inputedPassword === person.password)
+               let getUser = users?.find(person => inputedEmail === person.email && inputedPassword === person.password)
 
                if(!getUser || getUser === null){
                 alert('User not found, signUp')
