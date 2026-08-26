@@ -42,7 +42,7 @@ const Hero = ({products, setProducts, setSearch}) => {
         <>
 
 
-                <div className='max-md:text-center grid md:grid-cols-2 py-20 md:pl-20'>
+                <div className='max-md:text-center grid md:grid-cols-2 py-10 md:py-20 md:pl-20'>
 {/* Hero */}
                     <div>
 
@@ -89,8 +89,8 @@ const Hero = ({products, setProducts, setSearch}) => {
 
 
 {/* Images */}
-                    <div className='flex max-md:mt-20 max-md:flex-col items-center md:gap-10'>
-                       <div className='overflow-hidden'> <img src={food1} alt="Food" className='max-md:w-[98%] h-110 m-auto img-hovered'/></div>
+                    <div className='md:flex max-md:mt-10 items-center md:gap-10'>
+                       <div className='overflow-hidden'> <img src={food1} alt="Food" className='max-md:w-[95%] h-110 m-auto img-hovered'/></div>
                         <div className='overflow-hidden'><img src={food2} alt="Food" className='max-md:hidden h-96 img-hovered'/></div>
                     </div>
 
