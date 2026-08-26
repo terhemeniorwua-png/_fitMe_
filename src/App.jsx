@@ -79,6 +79,13 @@ function App() {
           }, 0)
        }, [cart])
 
+      //  Payment
+
+      const handlePayment = ()=>{
+        alert('Payment Successful')
+        setCart([])
+        navigate('/', {replace: true})
+      }
 
   return (
     <>
@@ -278,12 +285,11 @@ function App() {
 
 
 
-                          <Link>
                             <Button 
                             value='Proceed to payment'
                             path='/signUp'
+                            fuctionality={handlePayment}
                         />
-                        </Link>
                     </div>
                      
                   </div>
