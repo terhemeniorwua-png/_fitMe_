@@ -10,12 +10,14 @@ const Socials = () => {
 
                 <div className="text-2xl grid grid-cols-2 font-semibold gap-5">
                     <div className="border flex justify-center items-center px-5 hover:cursor-pointer rounded-xl border-gray-300">
-                        <BiLogoGoogle className="text-red-400"/>
+                       <a href='https://x.com/PIorwua12080'> <BiLogoGoogle className="text-red-400"/>
                         <p className="text-[12px]">Google</p>
+                        </a>
                     </div>
                     <div className="border flex justify-center items-center px-5 hover:cursor-pointer py-2 rounded-xl border-gray-300">
-                        <FaApple />
+                       <a href='https://wa.me/09166354571'> <FaApple />
                         <p className="text-[12px]">Apple</p>
+                        </a>
                     </div>
 
                 </div>
