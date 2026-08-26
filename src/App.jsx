@@ -73,10 +73,8 @@ function App() {
         let [cartPrice, setCartPrice] = useState(0)
 
        useEffect(()=>{
-        cart.reduce((total, item)   =>{
-                                   
-          setCartPrice(total += item.reviewCount)
-          }, 0)
+        let priceCalc = cart.reduce((total, item)   => total += item.reviewCount * item.quantity, 0)
+        setCartPrice(priceCalc)
        }, [cart])
 
       //  Payment
@@ -86,6 +84,8 @@ function App() {
         setCart([])
         navigate('/', {replace: true})
       }
+
+      // console.log(cart.quantity)
 
   return (
     <>
@@ -195,7 +195,7 @@ function App() {
          <Route
           path='/checkout'
           element={
-             <div className='mb-10'>
+             <div className='mb-10 mt-5'>
                   <div className="px-5">
                 
                     <h2 className="text-xl font-semibold md:px-16">Secure Checkout</h2>
@@ -269,21 +269,13 @@ function App() {
                             </div>
                           </section>
 
-
-
-
-
-
+{/* {cart} */}
                            <div className="flex justify-between pb-5 pr-2 pt-5">
                               <div className="space-y-2">
                                < p className="font-bold text-xl px-5">Total</p> 
                                </div>
                                  <p className="font-bold text-xl">${cartPrice + 131.00 + 2 - 4}</p>
                             </div>
-
-                            
-
-
 
                             <Button 
                             value='Proceed to payment'

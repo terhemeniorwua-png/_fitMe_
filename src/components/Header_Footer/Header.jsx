@@ -86,7 +86,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
 
                     {/* Mobile search */}
                     <div 
-                        className='border border-gray-200 rounded-xl p-2 px-3 items-center w-full mt-4 hidden shadow-sm'
+                        className='border border-gray-200 flex justify-between items-center rounded-xl p-2 px-3 items-center w-full mt-4 hidden shadow-sm'
                         id='search'
                     >
 

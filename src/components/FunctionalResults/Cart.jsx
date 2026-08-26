@@ -38,7 +38,7 @@ const increaseQuantity = (id) => {
 
     return ( 
         <>
-            <div  className="w-[80%] m-auto md:w-full px-5  max-md:py-10 rounded-lg">
+            <div  className="w-[95%] m-auto md:w-full px-2 md:px-5  max-md:py-10 rounded-lg">
                 <div className="flex items-center justify-between">
                     <h2 className="font-semibold">Cart</h2>
                         <p>{numberOfItems} items</p>
