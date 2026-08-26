@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BiSolidCarBattery } from "react-icons/bi";
 
 
 const Subscription = ({time, setTime, date, setDate, days, setDays, active, setActive}) => {

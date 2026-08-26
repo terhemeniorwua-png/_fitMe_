@@ -109,7 +109,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
 
 
                 {/* ================= DESKTOP ================= */}
-                <div className='hidden md:grid grid-cols-[auto_1fr] items-center gap-10'>
+                <div className='hidden md:grid grid-cols-2 items-center gap-10'>
 
                     {/* Logo */}
                     <div>
@@ -132,7 +132,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                             <input
                                 type="search" 
                                 placeholder='Enter item or restaurant you are looking for' 
-                                className='border-0 outline-0 text-[12px] w-full'
+                                className='border-0 outline-0 text-[12px] w-[95%]'
                                 value={inputValue}
                                 onChange={(e)=>setInputValue(e.target.value)}
                             />

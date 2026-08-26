@@ -1,7 +1,6 @@
 import { BiLogoFacebook, BiLogoInstagram, BiLogoTwitter } from 'react-icons/bi';
 import logo from '/Footer-Logo.png'
 import { FaTwitter } from 'react-icons/fa';
-// import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Footer = () => {
     return ( 

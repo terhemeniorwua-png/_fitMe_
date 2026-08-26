@@ -13,7 +13,6 @@ import SignUpPage from './components/SignIn/SignInPage'
 import SignUp from './components/SignIn/SignUp'
 import SecureCheckout from './components/FunctionalResults/SecureCheckout'
 import Cart from './components/FunctionalResults/Cart'
-import { Link } from "react-router-dom";
 import Button from './components/Utilities/Button'
 import { BsFillExclamationCircleFill } from 'react-icons/bs'
 
