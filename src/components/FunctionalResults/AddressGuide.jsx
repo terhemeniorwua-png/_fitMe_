@@ -2,6 +2,7 @@ import { BiSolidCarBattery } from "react-icons/bi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Subscription from "./Subscription";
 import { useState } from "react";
+import Schedule from "./Shchedule";
 
 
 const Address = ( {  time,
@@ -15,6 +16,18 @@ const Address = ( {  time,
                 }) => {
 
     let [location, setLocation] = useState('none')
+    let [cliked, setClicked] = useState('none')
+    const [display, setDisplay] = useState(false)
+    const [schDisplay, setSchDisplay] = useState(false)
+
+
+    const handleDisplaySubscription = () =>{
+        setDisplay(!display)
+    }
+
+     const handleSchDisplay = () =>{
+        setSchDisplay(!schDisplay)
+    }
 
     return ( 
         <>
@@ -46,14 +59,30 @@ const Address = ( {  time,
 
             <div className="md:flex max-md:space-y-5 items-center gap-5 mb-10">
 
-                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> subscription </button>
+                <button className={`flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2 ${cliked === 'Sub' && 'locationBg'}`} onClick={(e)=>{
+                    handleDisplaySubscription(e)
+                    setClicked('Sub')
+                    setSchDisplay(false)
+                    }}> <BiSolidCarBattery /> subscription </button>
 
-                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Schedule order </button>
+                <button className={`flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2 ${cliked === 'SCh' && 'locationBg'}`} onClick={(e)=>{
+                    // console.log('clicked')
+                    setClicked('SCh')
+                    setDisplay(false)
+                    handleSchDisplay(e)
 
-                <button className="flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2"> <BiSolidCarBattery /> Order now </button>
+                }}> <BiSolidCarBattery /> Schedule order </button>
+
+                <button className={`flex items-center gap-2 text-sm border-2 border-dashed border-amber-600 rounded p-2 ${cliked === 'Now' && 'locationBg'}`} onClick={(e)=>{
+                    setClicked('Now')
+                    handleDisplaySubscription(e)
+                     setSchDisplay(false)
+                }}> <BiSolidCarBattery /> Order now </button>
             </div>
 
-                <Subscription 
+                {
+                    display && (
+                        <Subscription 
                         time = {time }
                         setTime = {setTime}
                         days = {days}
@@ -63,9 +92,15 @@ const Address = ( {  time,
                         active={active}
                         setActive={setActive}
                         />
+                    )}
+                    {
+                    schDisplay && (
+                        <Schedule />
+                    )
+                }
 
 
-          </div>
+                    </div>
 
                 </div>
             </div>

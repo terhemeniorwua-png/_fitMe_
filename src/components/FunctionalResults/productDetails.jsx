@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
 
-    // console.log(cart)
+    // console.log()
    
    
 
@@ -53,18 +53,27 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                         <img src={product.image} alt="image" className="h-36 img-hovered max-md:m-auto  max-md:pt-10 max-md:w-full"/>
 
                         <button className="bg-white text-green-500 p-5 rounded-lg shadow-2xl absolute -bottom-5 left-5" onClick={()=>{
-                            setCart(prevCart =>[...prevCart,
+                            let itemMatched = cart.find(item =>item.id === product.id)
+
+                              if(itemMatched){
+                                    alert('product already exist')
+                                    return false
+                                } else{
+                                    setCart(prevCart =>[...prevCart,
                                 product]
                             )
+                            }
+
                         }}>Add +</button>
                     </div>
                 </div>
                 
 
-                <div id="cart" className="hidden max-md:absolute max-md:top-28 bg-white pb-2">
+                <div id="cart" className="hidden max-md:absolute max-md:top-20 bg-white pb-2">
                 <Cart 
                 funcDisplayCart={handleCartDisplay} 
                 cart={cart}
+                setCart={setCart}
                 />
 
                 <div className="flex justify-between pb-5 pr-2 pt-5">
@@ -72,7 +81,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                         < p className="font-bold text-xl px-5">Subtotal</p> 
                          <small className="px-5">Extral charges may apply</small>
                     </div>
-                <   p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
+                        <p className="font-bold text-xl">${cart.reduce((total, item)   =>total += item.reviewCount, 0)}</p>
                 </div>
                 
 

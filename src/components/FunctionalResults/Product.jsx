@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa6";
 const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinutes, reviewCount}) => {
     return ( 
         <>
-            <div className="grid lg:grid-cols-3 lg:gap-20 px-10 lg:px-44 items-center justify-center bg-black text-white py-10">
+            <div className="grid lg:grid-cols-3 lg:gap-20 px-10 lg:px-44 items-center justify-center bg-black text-white max-md:mt-5 py-10">
                  <div>
                     <img src={img} alt={name} className="w-full"/>
                 </div>
@@ -58,11 +58,11 @@ const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinute
                         <h2 className="text-amber-600">Offers</h2>
                         <p className='text-[10px] flex items-center'>
                             <img src={list} alt="icon" />
-                            <span>50% off up to ₹100 | Use code TRYNEW</span>
+                            <span className='pl-2'>50% off up to ₹100 | Use code TRYNEW</span>
                         </p>
                          <p className='text-[10px] flex items-center'>
                             <img src={list} alt="icon" />
-                            <span>20% off | Use code PARTY</span>
+                            <span className='pl-2'>20% off | Use code PARTY</span>
                         </p>
                     </div>
             </div>

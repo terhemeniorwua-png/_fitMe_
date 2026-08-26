@@ -10,7 +10,7 @@ const Subscription = ({time, setTime, date, setDate, days, setDays, active, setA
     return ( 
         <>
         
-            <div className="text-[14px] font-semibold md:flex justify-between">
+            <div className="text-[14px] font-semibold md:flex justify-between" id='sub'>
 
                 <div>
                     <h5 className=" pb-10">Type of subscription?</h5>

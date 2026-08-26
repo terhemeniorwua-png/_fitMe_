@@ -26,7 +26,7 @@ function App() {
       let [products, setProducts] = useState({ recipes: [] })
       let [search, setSearch] = useState(false)
       let [selectedProduct, setSelectedProduct] = useState(null)
-      let [time, setTime] = useState('00:00 AM')
+      let [time, setTime] = useState('00:00')
       let [date, setDate] = useState('')
       let [days, setDays] = useState('1')
       let [active, setActive] = useState('none')
@@ -186,7 +186,7 @@ function App() {
          <Route
           path='/checkout'
           element={
-             <div>
+             <div className='mb-10'>
                   <div className="px-5">
                 
                     <h2 className="text-xl font-semibold md:px-16">Secure Checkout</h2>
@@ -276,7 +276,7 @@ function App() {
 
 
 
-                        <Link>
+                          <Link>
                             <Button 
                             value='Proceed to payment'
                             path='/signUp'
