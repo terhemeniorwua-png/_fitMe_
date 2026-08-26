@@ -80,7 +80,7 @@ function App() {
       //  Payment
 
       const handlePayment = ()=>{
-        alert('Payment Successful')
+        alert(`Payment of $${cartPrice + 131 + 2 -4} for ${cart.reduce((total, item)=>total =+ item.quantity, 0)} items Successful`)
         setCart([])
         navigate('/', {replace: true})
       }
