@@ -60,7 +60,11 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                                     return false
                                 } else{
                                     setCart(prevCart =>[...prevCart,
-                                product]
+                                {
+                                    ...product,
+                                    quantity:1
+                                }
+                            ]
                             )
                             }
 

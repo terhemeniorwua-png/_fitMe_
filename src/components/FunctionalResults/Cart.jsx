@@ -6,10 +6,34 @@ const Cart = ({funcDisplayCart, cart, setCart}) => {
 
     // console.log(cart)
 
-    let [quantity, setQuantity] = useState(1)
-    let [numberOfItems, setNumberOfItems] = useState(cart?.length)
-    let [focus, setFocus] = useState()
 
+
+  const decreaseQuantity = (id) => {
+  setCart(prevCart =>
+    prevCart.map(item =>
+      item.id === id
+        ? { ...item, quantity: Math.max(0, item.quantity - 1) }
+        : item
+    )
+  );
+};
+
+
+const increaseQuantity = (id) => {
+  setCart(prevCart =>
+    prevCart.map(item =>
+      item.id === id
+        ? { ...item, quantity: Math.max(0, item.quantity + 1 )}
+        : item
+    )
+  );
+};
+
+
+     const numberOfItems = cart.reduce(
+    (total, item) => total + Number(item.quantity),
+    0
+  );
     
 
     return ( 
@@ -27,12 +51,12 @@ const Cart = ({funcDisplayCart, cart, setCart}) => {
                         <div>
                            <div className="flex justify-between items-center">
                              <p>from <span className="text-amber-500">{item.mealType[0]}</span></p>
-                             <p className="text-[12px]">{quantity}</p>
+                             <p className="text-[12px]">{item.quantity}</p>
                            </div>
                             <p>{item.name}</p>
 
                            <div className="flex justify-between">
-                             <small className="font-semibold text-gray-500">${item.reviewCount * quantity}</small>
+                             <small className="font-semibold text-gray-500">${item.reviewCount * item.quantity}</small>
                              <button className="text-[10px] p-1 bg-red-300 rounded-2xl" onClick={(e)=>{
                                 // console.log('clicke')
                               let items = cart.filter(items=> items.id != item.id)
@@ -42,17 +66,8 @@ const Cart = ({funcDisplayCart, cart, setCart}) => {
                            </div>
                         </div>
                         <div className="flex items-center gap-1">
-                            <p className="cursor-default" onClick={(e)=>{
-                                setQuantity(prevQuantity => Math.max(0, prevQuantity -1))
-                                setNumberOfItems(prevNumberOfItems => (
-                                    prevNumberOfItems + 1
-                                ))
-                            }}>-</p> | <p className="cursor-default"  onClick={(e)=>{
-                                 setQuantity(prevQuantity => Math.max(0, prevQuantity +1))
-                                 setNumberOfItems(prevNumberOfItems => (
-                                    prevNumberOfItems - 1
-                                ))
-                            }}
+                            <p className="cursor-default" onClick={()=>{decreaseQuantity(item.id)
+                            }}>-</p> | <p className="cursor-default"  onClick={()=>{increaseQuantity(item.id)}}
                             >+</p>
                         </div>
                       </div>

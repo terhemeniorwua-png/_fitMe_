@@ -4,7 +4,7 @@
     import { useNavigate } from 'react-router-dom';
 
     const Header = ({products, setProducts, setSearch, cart, func}) => {
-        // console.log(products)
+        // console.log(cart)
 
         let navigate = useNavigate()
 
