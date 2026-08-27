@@ -31,7 +31,7 @@ const SignUpPage = ({setLoggedN}) => {
                 
 {
     displayLogin && 
-        (<div className=''>
+        (<div>
         <SignIn setLogged={setLoggedN} setDisplayLogin={setDisplayLogin}/>
         <div className='flex items-center pt-8 justify-center text-gray-500 text-[13px] gap-5'>
             <p> &copy;2026 FitMe All rights reserved </p>
@@ -40,8 +40,8 @@ const SignUpPage = ({setLoggedN}) => {
            </div>
         </div>)
 }
-                <div>
-                    <img src={img} alt="" className='h-screen object-cover'/>
+                <div className='w-full col-span-2'>
+                    <img src={img} alt="" className='h-screen object-cover w-full rounded-4xl'/>
                 </div>
 
           

@@ -10,7 +10,7 @@ const SignIn = ({setLogged, setDisplayLogin}) => {
 
     return ( 
         <>
-        <div className="w-[90%] md:w-[85%] m-auto border border-gray-200 rounded-2xl mt-0 p-6 space-y-5 shadow-xl bg-white absolute top-20 left-5">
+        <div className="w-[90%] md:w-[35%]  border border-gray-200 rounded-2xl mt-0 p-6 space-y-5 shadow-xl bg-white absolute top-20 md:top-12 left-5 md:left-[30%]">
               
                <div>
                 <div className="flex justify-between items-center">
