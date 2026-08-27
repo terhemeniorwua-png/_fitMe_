@@ -16,7 +16,7 @@ const SignIn = ({setLogged, setDisplayLogin}) => {
                 <div className="flex justify-between items-center">
                  <h1 className="font-black text-2xl">Welcome Back!</h1>
 
-                  <p className="bg-red-800 rounded-full font-black text-white text-right p-0.5 px-2" onClick={()=>{
+                  <p className="bg-red-800 rounded-full font-black cursor-default text-white text-right p-0.5 px-2" onClick={()=>{
                     setDisplayLogin(false)
                   }}>X</p>
 

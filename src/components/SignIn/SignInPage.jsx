@@ -40,8 +40,8 @@ const SignUpPage = ({setLoggedN}) => {
            </div>
         </div>)
 }
-                <div className='w-full col-span-2'>
-                    <img src={img} alt="" className='h-screen object-cover w-full rounded-4xl'/>
+                <div className='w-full md:col-span-2'>
+                    <img src={img} alt="" className='h-screen object-cover md:w-full rounded-2xl'/>
                 </div>
 
           
