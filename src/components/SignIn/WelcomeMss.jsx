@@ -3,7 +3,7 @@ const WelcomeMssg = () => {
 
     return ( 
         <>
-            <div className="pt-10 space-y-10 h-96 rounded-4xl pl-5">
+            <div className="pt-10 space-y-10 h-96 rounded-4xl pl-5 max-md:text-center">
                <div className="space-y-5">
                  <h1 className="font-medium text-5xl ">
                     <span className="block">Good Food,</span> 
