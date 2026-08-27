@@ -53,7 +53,7 @@ const increaseQuantity = (id) => {
                              <p>from <span className="text-amber-500">{item.mealType[0]}</span></p>
                              <p className="text-[12px]">{item.quantity}</p>
                            </div>
-                            <p>{item.name}</p>
+                            <p className="w-[50%]">{item.name}</p>
 
                            <div className="flex justify-between">
                              <small className="font-semibold text-gray-500">${item.reviewCount * item.quantity}</small>
