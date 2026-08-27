@@ -89,11 +89,16 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                 </div>
                 
 
+              {cart?.length === 0? (
+                <Button 
+                value="Checkout"
+                />):(  
                 <Link to='/checkout'>
                 <Button 
                 value="Checkout"
                 />
-                </Link>
+                </Link>)
+            }
             </div>
            </div>
         </>

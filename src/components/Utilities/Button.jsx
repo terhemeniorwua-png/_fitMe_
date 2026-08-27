@@ -1,6 +1,6 @@
 
 
-const Button = ({value, fuctionality}) => {
+const Button = ({value, fuctionality, disable}) => {
     return ( 
         <>
         
