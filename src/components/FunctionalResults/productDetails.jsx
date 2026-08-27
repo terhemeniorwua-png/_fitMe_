@@ -90,9 +90,8 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                 
 
               {cart?.length === 0? (
-                <Button 
-                value="Checkout"
-                />):(  
+                <button className="py-3 w-full text-white rounded-lg font-bold bg-gray-300 hover:cursor-pointer">Checkout</button>
+               ):(  
                 <Link to='/checkout'>
                 <Button 
                 value="Checkout"

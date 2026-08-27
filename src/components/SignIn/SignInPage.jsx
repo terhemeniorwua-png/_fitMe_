@@ -14,7 +14,8 @@ const SignUpPage = ({setLoggedN}) => {
     return ( 
         <>
 
-           
+           <div className='max-md:h-screen overflow-hidden'>
+
                 <div className='flex justify-between items-center'>
                     <img src={logo} alt="" className='p-5'/>
 
@@ -47,6 +48,7 @@ const SignUpPage = ({setLoggedN}) => {
           
            </div>
 
+           </div>
         </>
      );
 }
