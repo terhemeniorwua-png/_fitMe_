@@ -2,6 +2,7 @@ import Cart from "./Cart";
 import Product from "./Product";
 import Button from "../Utilities/Button";
 import { Link } from "react-router-dom";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
 
@@ -26,8 +27,20 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                 caloriesPerServing={product.caloriesPerServing}
                 cookTimeMinutes={product.cookTimeMinutes}
                 />
+            
+            
 
+           </div>
+           <div>
 
+            <div className="flex items-center justify-between bg-white rounded">
+                <input 
+                type="search" 
+                placeholder="Search for dish"
+                className="outline-0"
+                />
+                <FaMagnifyingGlass />
+            </div>
            </div>
            
            <div className="max-md:space-y-10 grid md:grid-cols-[1fr_3fr_2fr] px-10 md:px-20 md:gap-8 py-5">

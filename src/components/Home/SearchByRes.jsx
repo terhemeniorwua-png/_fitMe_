@@ -59,7 +59,6 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
                     </div>
 
                     <button className='bg-black text-white text-sm px-5 py-1 rounded '
-                     onClick={(e)=>{handelSearch(e)}}
                     >Search Now</button>
 
                 </div>

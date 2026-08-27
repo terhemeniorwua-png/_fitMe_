@@ -67,7 +67,6 @@ const Hero = ({products, setProducts, setSearch}) => {
             
                                 </div>
                                 <button className='bg-black text-white text-sm px-5 py-2 max-md:mt-3 rounded'
-                                onClick={(e)=>{handelSearch(e)}}
                                 >Get Started</button>
                             
                              </div>
