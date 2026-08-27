@@ -56,7 +56,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                             let itemMatched = cart.find(item =>item.id === product.id)
 
                               if(itemMatched){
-                                    alert('product already exist')
+                                    alert('Product already exist. Add the number in the cart instead!')
                                     return false
                                 } else{
                                     setCart(prevCart =>[...prevCart,

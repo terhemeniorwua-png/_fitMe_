@@ -89,7 +89,7 @@ function App() {
   return (
     <>
         {
-          !loggedIn? 
+          loggedIn? 
           (
             <Routes>
               
@@ -210,7 +210,7 @@ function App() {
                     />
                   </div>
                   <div>
-                    <Cart cart={cart}/>
+                    <Cart cart={cart} setCart={setCart}/>
                      <div>
 
 
@@ -269,12 +269,16 @@ function App() {
                                </div>
                                  <p className="font-bold text-xl">${cartPrice + 131.00 + 2 - 4}</p>
                             </div>
-
+                  {
+                    cart.length === 0?
+                    (<button className='py-3 w-full text-white rounded-lg font-bold bg-gray-300 hover:cursor-pointer'>Proceed to payment</button>):
+                    (
                             <Button 
                             value='Proceed to payment'
                             path='/signUp'
                             fuctionality={handlePayment}
-                        />
+                        />)
+                  }
                     </div>
                      
                   </div>
