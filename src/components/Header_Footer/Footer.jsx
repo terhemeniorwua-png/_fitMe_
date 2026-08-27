@@ -2,7 +2,7 @@ import { BiLogoFacebook, BiLogoInstagram, BiLogoTwitter } from 'react-icons/bi';
 import logo from '/Footer-Logo.png'
 import { FaTwitter } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer = ({setLoggedIn}) => {
     return ( 
         <>
             <footer className="bg-[#FC8019] text-white py-20 space-y-5 pl-5">
@@ -15,6 +15,7 @@ const Footer = () => {
                             <li>Delivery</li>
                             <li>Help & Support</li>
                             <li>T&C</li>
+                            <li className='cursor-pointer' onClick={()=>{setLoggedIn(false)}}>LogOut</li>
                         </ul>
                     </nav>
                     <p className='text-sm'>Contact <b><a href="https://wa.me/09166354571">+2349166354571</a></b></p>

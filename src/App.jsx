@@ -290,7 +290,7 @@ function App() {
       </Routes>
 
 
-      <Footer />
+      <Footer setLoggedIn={setLoggedIn}/>
 
       </div>
 
