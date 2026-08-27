@@ -43,14 +43,14 @@ const Address = ( {  time,
                     setLocation('first')
                 }}>
                         <FaMapMarkerAlt className='text-3xl my-2'/>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam id error consequatur qui dolores, omnis eos eveniet et veritatis fuga officia alias placeat illum, dicta voluptates suscipit maiores quis!
+                     Dno. 12-34-12, XYC Apartments, DOOR Colony, Hyderabad, Telangana
 
                         </div>
                         <div className={`px-5 py-5 rounded-2xl text-sm border-2 border-dashed border-amber-600 ${location === 'second' && 'locationBg'}`}  onClick={()=>{
                     setLocation('second')
                 }}>
                         <FaMapMarkerAlt className='text-3xl my-2 '/>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto numquam id error consequatur qui dolores, omnis eos eveniet et veritatis fuga officia alias placeat illum, dicta voluptates suscipit maiores quis!
+                        Dno. 12-34-12, XYC Apartments, DOOR Colony, Hyderabad, Telangana
                     </div>
                 </div>
           

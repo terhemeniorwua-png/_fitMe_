@@ -195,7 +195,7 @@ function App() {
                 <hr />
                 </div>
 
-                <div className=" max-md:flex max-md:flex-col-reverse grid 
+                <div className=" max-md:flex max-md:flex-col grid 
                 md:grid-cols-[2fr_1fr] gap-5 md:gap-36 px-5 lg:px-16 md:pt-5">
                   <div>
                     <SecureCheckout 
