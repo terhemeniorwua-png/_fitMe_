@@ -15,10 +15,10 @@ const Footer = ({setLoggedIn}) => {
                             <li>Delivery</li>
                             <li>Help & Support</li>
                             <li>T&C</li>
-                            <li className='cursor-pointer' onClick={()=>{setLoggedIn(false)}}>LogOut</li>
                         </ul>
                     </nav>
                     <p className='text-sm'>Contact <b><a href="https://wa.me/09166354571">+2349166354571</a></b></p>
+                    <p className='cursor-pointer' onClick={()=>{setLoggedIn(false)}}>LogOut</p>
                 </div>
 
                 <p className='text-2xl flex justify-center items-center gap-5'>
