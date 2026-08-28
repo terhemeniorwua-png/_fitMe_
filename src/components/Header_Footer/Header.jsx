@@ -35,13 +35,13 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
         <>
             <header className='px-5 md:px-20 pt-4 md:pt-5'>
 
-                {/* ================= MOBILE ================= */}
+                {/* MOBILE */}
                 <div className='md:hidden'>
 
-                    {/* Top mobile navigation */}
+                   
                     <div className='flex items-center justify-between'>
 
-                        {/* Logo */}
+                       
                         <div className='shrink-0'>
                             <img 
                                 src={logo} 
@@ -54,7 +54,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                         </div>
 
 
-                        {/* Mobile actions */}
+                        
                         <div className='flex items-center gap-5'>
 
                             {/* Search */}
@@ -70,7 +70,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                             </button>
 
 
-                            {/* Cart */}
+                           
                             <div 
                                 className='relative cursor-pointer'
                                 onClick={(e)=>{func(e)}}
@@ -87,7 +87,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                     </div>
 
 
-                    {/* Mobile search */}
+                   
                     <div 
                         className='border border-gray-200 flex justify-between items-center rounded-xl p-2 px-3 items-center w-full mt-4 hidden shadow-sm'
                         id='search'
@@ -111,7 +111,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                 </div>
 
 
-                {/* ================= DESKTOP ================= */}
+                {/* DESKTOP */}
                 <div className='hidden md:grid grid-cols-2 items-center gap-10 mb-5'>
 
                     {/* Logo */}
@@ -127,7 +127,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                     </div>
 
 
-                    {/* Desktop controls */}
+                  
                     <div className='flex items-center gap-5'>
 
                         {/* Search */}
@@ -147,7 +147,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                         </div>
 
 
-                        {/* Cart */}
+                      
                         <div className="relative cursor-pointer" onClick={(e)=>{func(e)}}>
                             <BiShoppingBag className='text-2xl'/>
                             
@@ -157,7 +157,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                         </div>
 
 
-                        {/* Sign in */}
+                        
                         <button 
                             className='bg-black text-white text-sm px-5 py-2 rounded'
                             
