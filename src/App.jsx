@@ -89,7 +89,7 @@ function App() {
   return (
     <>
         {
-          !loggedIn? 
+          loggedIn? 
           (
             <Routes>
               
@@ -177,6 +177,9 @@ function App() {
           element={
             <ProductDetails
               product={selectedProduct}
+              setProducts={setProducts}
+              setSearch={setSearch}
+              products={products}
               cart={cart}
               setCart={setCart}
               handleCartDisplay={handleCartDisplay}

@@ -4,7 +4,7 @@ import Button from "../Utilities/Button";
 import { Link } from "react-router-dom";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
-const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
+const ProductDetails = ({product, products, setSearch, setProducts, cart, setCart, handleCartDisplay}) => {
 
     // console.log()
    
@@ -19,7 +19,10 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
             {/* {console.log(product)} */}
                
                  <Product 
+                 product={products}
                 img={product.image}
+                setProducts={setProducts}
+                setSearch={setSearch}
                 name={product.name}
                 rating={product.rating}
                 reviewCount= {product.reviewCount}
@@ -65,7 +68,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                     <div className="overflow-hidden w-full relative">
                         <img src={product.image} alt="image" className="h-36 img-hovered max-md:m-auto  max-md:pt-10 max-md:w-full"/>
 
-                        <button className="bg-white text-green-500 p-5 rounded-lg shadow-2xl absolute -bottom-5 left-5" onClick={()=>{
+                        <button className="bg-white text-green-500 p-5 border rounded-lg shadow-2xl absolute -bottom-5 left-5" onClick={()=>{
                             let itemMatched = cart.find(item =>item.id === product.id)
 
                               if(itemMatched){

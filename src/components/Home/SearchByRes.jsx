@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 const SearchByRest = ({products, setProducts, setSearch}) => {
 
+    
+
     const [input, setInput] = useState('')
 
     let navigate = useNavigate()
@@ -18,16 +20,16 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
          
        let itemsMatched= products && products.recipes.filter(item =>{
             let itemName = item.name.toLowerCase()
-            let input = inputValue.toLowerCase()
+            let inpute = input.toLowerCase()
 
-            return itemName.includes(input)
+            return itemName.includes(inpute)
             // console.log(itemName.includes(input)) 
            
         })
 // console.log(itemsMatched)
         setProducts({recipes: itemsMatched})
         setSearch(true)
-        setInputValue('')
+        setInput('')
         navigate('/search')
 
 
@@ -58,7 +60,7 @@ const SearchByRest = ({products, setProducts, setSearch}) => {
                           />
                     </div>
 
-                    <button className='bg-black text-white text-sm px-5 py-1 rounded '
+                    <button className='bg-black text-white text-sm px-5 py-1 rounded ' onClick={(e)=>{handelSearch(e)}}
                     >Search Now</button>
 
                 </div>

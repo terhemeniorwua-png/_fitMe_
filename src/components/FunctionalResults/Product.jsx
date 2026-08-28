@@ -1,9 +1,46 @@
 import { FaRegHeart, FaSearch } from 'react-icons/fa';
 import list from '/list.png'
 import { FaStar } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
-const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinutes, reviewCount}) => {
+const Product = ({img, name, product, setProducts, setSearch, rating, cuisine, caloriesPerServing, cookTimeMinutes, reviewCount}) => {
+
+
+    const [input, setInput] = useState('')
+
+    let navigate = useNavigate()
+
+
+
+    const handelSearch = (e) =>{
+        console.log(product)
+        if(e.target){
+         
+       let itemsMatched= product && product.recipes.filter(item =>{
+            let itemName = item.name.toLowerCase()
+            let inpute = input.toLowerCase()
+
+            return itemName.includes(inpute)
+            // console.log(itemName.includes(input)) 
+           
+        })
+// console.log(itemsMatched)
+        setProducts({recipes: itemsMatched})
+        setSearch(true)
+        setInput('')
+        navigate('/search')
+
+
+
+    //  alert('Fetch failed!')
+   
+    }
+    }
+
+
+
     return ( 
         <>
             <div className="grid lg:grid-cols-3 lg:gap-20 px-10 lg:px-44 items-center justify-center bg-black text-white max-md:mt-5 py-10">
@@ -74,11 +111,13 @@ const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinute
             <div className="flex h-9.5 w-full max-w-75 items-center rounded-lg bg-white px-3 shadow-lg">
               <input
                 type="text"
+                value={input}
+                onChange={(e)=>{setInput(e.target.value)}}
                 placeholder="Search for dish"
                 className="w-full bg-transparent px-1 text-[9px] text-gray-700 outline-none placeholder:text-gray-400"
               />
 
-              <FaSearch size={13} className="shrink-0 text-gray-500" />
+              <FaSearch size={13} className="shrink-0 text-gray-500" onClick={(e)=>{handelSearch(e)}}/>
             </div>
 
             <button
