@@ -101,7 +101,7 @@ const SignInForm = ({setLoggedIn}) => {
                         </p>
                     </div>
 
-                   <div className="space-y-10 pt-2">
+                   <div className="space-y-5 pt-2">
 
                          <input 
                             type="submit" 

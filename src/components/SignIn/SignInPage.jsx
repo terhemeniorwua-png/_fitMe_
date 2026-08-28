@@ -32,7 +32,7 @@ const SignUpPage = ({setLoggedN}) => {
                 
 {
     displayLogin && 
-        (<div className="absolute inset-0 z-50">
+        (<div className="absolute inset-0 z-50 shadow-2xl">
         <SignIn 
         setLogged={setLoggedN} 
         setDisplayLogin={setDisplayLogin}

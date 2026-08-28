@@ -8,7 +8,7 @@ const Socials = () => {
         <>
             <div>
 
-                <div className="text-2xl space-y-5 font-semibold gap-5">
+                <div className="text-2xl space-y-2 font-semibold gap-5">
                     <div className="border py-2 flex gap-2 justify-center items-center px-5 hover:cursor-pointer rounded-xl border-gray-300">
                        <BiLogoGoogle className="text-red-400"/>
                         <p className="text-[12px]">Continue with Google</p>
