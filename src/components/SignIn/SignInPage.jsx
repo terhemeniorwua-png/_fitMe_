@@ -32,13 +32,12 @@ const SignUpPage = ({setLoggedN}) => {
                 
 {
     displayLogin && 
-        (<div>
-        <SignIn setLogged={setLoggedN} setDisplayLogin={setDisplayLogin}/>
-        <div className='flex items-center pt-8 justify-center text-gray-500 text-[13px] gap-5'>
-            <p> &copy;2026 FitMe All rights reserved </p>
-            <p> Terms of Services </p>
-            <p> Privacy Policy </p>
-           </div>
+        (<div className="absolute inset-0 z-50">
+        <SignIn 
+        setLogged={setLoggedN} 
+        setDisplayLogin={setDisplayLogin}
+        />
+       
         </div>)
 }
                 <div className='w-full md:col-span-2'>

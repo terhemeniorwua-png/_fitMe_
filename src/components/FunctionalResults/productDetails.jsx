@@ -31,7 +31,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
             
 
            </div>
-           <div>
+           {/* <div>
 
             <div className="flex items-center justify-between bg-white rounded">
                 <input 
@@ -41,7 +41,7 @@ const ProductDetails = ({product, cart, setCart, handleCartDisplay}) => {
                 />
                 <FaMagnifyingGlass />
             </div>
-           </div>
+           </div> */}
            
            <div className="max-md:space-y-10 grid md:grid-cols-[1fr_3fr_2fr] px-10 md:px-20 md:gap-8 py-5">
                 <div className="flex flex-col md:text-right pr-5">
