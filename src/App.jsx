@@ -89,7 +89,7 @@ function App() {
   return (
     <>
         {
-          !loggedIn? 
+          loggedIn? 
           (
             <Routes>
               
@@ -160,7 +160,8 @@ function App() {
         <Route
           path="/search"
           element={
-            <SearchResults 
+            <SearchResults
+            // path='/restaurant/:id'
             products={products} 
              func={handleDetails}
             />

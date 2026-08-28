@@ -1,3 +1,4 @@
+import { FaRegHeart, FaSearch } from 'react-icons/fa';
 import list from '/list.png'
 import { FaStar } from "react-icons/fa6";
 
@@ -66,6 +67,43 @@ const Product = ({img, name, rating, cuisine, caloriesPerServing, cookTimeMinute
                         </p>
                     </div>
             </div>
+
+            {/* SEARCH + FAVOURITE */}
+
+          <div className="z-10 flex translate-y-5 items-center gap-3 justify-center relative bottom-14">
+            <div className="flex h-9.5 w-full max-w-75 items-center rounded-lg bg-white px-3 shadow-lg">
+              <input
+                type="text"
+                placeholder="Search for dish"
+                className="w-full bg-transparent px-1 text-[9px] text-gray-700 outline-none placeholder:text-gray-400"
+              />
+
+              <FaSearch size={13} className="shrink-0 text-gray-500" />
+            </div>
+
+            <button
+              className="
+                flex
+                h-9.5
+                shrink-0
+                items-center
+                gap-2
+                rounded-lg
+                bg-white
+                px-4
+                text-[10px]
+                text-gray-500
+                shadow-lg
+              "
+            >
+              <FaRegHeart size={12} onClick={(e)=>{
+                e.currentTarget.classList.toggle('text-red-500')
+              }}/>
+
+              <span className="hidden sm:block">Favourite</span>
+            </button>
+          </div>
+
         </>
      );
 }

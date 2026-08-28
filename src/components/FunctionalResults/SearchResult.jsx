@@ -1,10 +1,24 @@
 import { BiStar } from "react-icons/bi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import group from '/Group.png'
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SearchResults = ({products, func}) => {
 
     // console.log(products)
+
+//       const [searchParams] = useSearchParams();
+//   const navigate = useNavigate();
+
+//   const query = searchParams.get("q") || "";
+
+//   const results = recipes.filter((recipe) =>
+//     recipe.name.toLowerCase().includes(query.toLowerCase())
+//   );
+
+//   const openRestaurant = (id) => {
+//     navigate(`/restaurant/${id}`);
+//   };
     
     return ( 
         <>
