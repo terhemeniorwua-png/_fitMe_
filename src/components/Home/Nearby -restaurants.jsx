@@ -16,7 +16,7 @@ const NearByRestaurants = ({error, products, func}) => {
                         <div className="grid md:grid-cols-2 space-y-10 md:gap-10">
                             {/* {console.log(products)} */}
                 {
-                     products?.recipes?.slice(0, 12).map(product =>(
+                     products?.recipes?.slice(0, 4).map(product =>(
                         <Food 
                             key={product.id}
                             id={product.id}
@@ -36,11 +36,11 @@ const NearByRestaurants = ({error, products, func}) => {
             <div className="mt-5">
                 <h1 className="text-center text-2xl font-black pb-5">Recommended Foods</h1>
 
-                <div className="grid md:grid-cols-3 space-y-10 md:gap-10">
+                <div className="grid md:grid-cols-2 space-y-10 md:gap-10">
                      
                 {
                    
-                     products?.recipes?.slice(12, 30).map(product =>(
+                     products?.recipes?.slice(12, 16).map(product =>(
                         // console.log(product)
                            <Food 
                             key={product.id}
