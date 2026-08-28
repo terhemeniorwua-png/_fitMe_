@@ -28,6 +28,12 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
         }
     }
 
+    let qtn = cart?.reduce((total, qtn) =>(total += qtn.quantity), 0)
+
+    // console.log(qtn)
+
+    // console.log(cart.reduce((total, item)=> (total += item.quantity), 0))
+
     return ( 
         <>
             <header className='px-5 md:px-20 pt-4 md:pt-5'>
@@ -75,7 +81,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                                 <BiShoppingBag className='text-2xl text-gray-700' />
 
                                 <p className='bg-amber-600 text-[9px] min-w-4 h-4 px-1 absolute flex items-center justify-center rounded-full text-white -top-2 -right-2'>
-                                    {cart.length}
+                                    {qtn}
                                 </p>
                             </div>
 
@@ -149,7 +155,7 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
                             <BiShoppingBag className='text-2xl'/>
                             
                             <p className='bg-amber-600 text-[10px] absolute text-center rounded-full p-1 text-white bottom-3 left-3'>
-                                {cart.length}
+                                {qtn}
                             </p>
                         </div>
 
