@@ -30,9 +30,6 @@ const Header = ({products, setProducts, setSearch, cart, func}) => {
 
     let qtn = cart?.reduce((total, qtn) =>(total += qtn.quantity), 0)
 
-    // console.log(qtn)
-
-    // console.log(cart.reduce((total, item)=> (total += item.quantity), 0))
 
     return ( 
         <>

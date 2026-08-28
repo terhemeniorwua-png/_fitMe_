@@ -8,11 +8,13 @@ const SearchResults = ({products, func}) => {
     // console.log(products)
 
 //       const [searchParams] = useSearchParams();
-//   const navigate = useNavigate();
+// //   const navigate = useNavigate();
 
 //   const query = searchParams.get("q") || "";
 
-//   const results = recipes.filter((recipe) =>
+//   console.log(query)
+
+//   const results = products.filter((recipe) =>
 //     recipe.name.toLowerCase().includes(query.toLowerCase())
 //   );
 
@@ -23,7 +25,7 @@ const SearchResults = ({products, func}) => {
     return ( 
         <>
             <div>
-                <h1 className="md:pl-20 md:my-10 pl-5 py-5">Search results for</h1>
+                <h1 className="md:pl-20 md:my-10 pl-5 py-5">Search results for </h1>
 
                 <div className="flex items-center gap-10 text-sm pl-5 pb-10 md:pl-20">
                     <button className="bg-[#FC8019] rounded-3xl text-white  px-8 py-2">Dishes</button>

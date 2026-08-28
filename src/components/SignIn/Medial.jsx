@@ -1,4 +1,4 @@
-import { BiLogoGoogle } from "react-icons/bi";
+import { BiLogoFacebookCircle, BiLogoGoogle } from "react-icons/bi";
 import { FaApple } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -8,16 +8,22 @@ const Socials = () => {
         <>
             <div>
 
-                <div className="text-2xl grid grid-cols-2 font-semibold gap-5">
-                    <div className="border flex justify-center items-center px-5 hover:cursor-pointer rounded-xl border-gray-300">
-                       <a href='#'> <BiLogoGoogle className="text-red-400"/>
-                        <p className="text-[12px]">Google</p>
-                        </a>
+                <div className="text-2xl space-y-5 font-semibold gap-5">
+                    <div className="border py-2 flex gap-2 justify-center items-center px-5 hover:cursor-pointer rounded-xl border-gray-300">
+                       <BiLogoGoogle className="text-red-400"/>
+                        <p className="text-[12px]">Continue with Google</p>
+                        
                     </div>
-                    <div className="border flex justify-center items-center px-5 hover:cursor-pointer py-2 rounded-xl border-gray-300">
-                       <a href='#'> <FaApple />
-                        <p className="text-[12px]">Apple</p>
-                        </a>
+                    <div className="border flex gap-2 justify-center items-center px-5 hover:cursor-pointer py-2 rounded-xl border-gray-300">
+                       <FaApple />
+                        <p className="text-[12px]">Continue with Apple</p>
+                       
+                    </div>
+
+                     <div className="border flex gap-2 justify-center items-center px-5 hover:cursor-pointer py-2 rounded-xl border-gray-300">
+                      <BiLogoFacebookCircle />
+                        <p className="text-[12px]">Continue with Facebook</p>
+                       
                     </div>
 
                 </div>

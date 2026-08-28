@@ -158,10 +158,9 @@ function App() {
         />
 
         <Route
-          path="/search"
+          path='/search'
           element={
             <SearchResults
-            // path='/restaurant/:id'
             products={products} 
              func={handleDetails}
             />
